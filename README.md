@@ -1,8 +1,8 @@
-# RSD Workshop App
+# Mac-branded Website Development
 
-Materials for the McMaster Research Software workshop: **RSD Workshop App**  
+Materials for the McMaster Research Software workshop: **Mac-branded Website Development**  
 
-This repository contains workshop files, as well as files used to create the [workshop webpage](https://mcmasterrs.github.io/rsd-workshop-app) with GitHub Pages.  
+This repository contains workshop files, as well as files used to create the [workshop webpage](https://mcmasterrs.github.io/mac-web-dev) with GitHub Pages.  
 
 Contributions by the following individuals: 
 - Workshop content created by Elias Eid
