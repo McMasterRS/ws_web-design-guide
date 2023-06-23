@@ -2,14 +2,14 @@
 layout: default
 title: Dark and Light Mode
 parent: Mac Branding
-nav_order: 3
+nav_order: 4
 ---
 
 # Dark and Light Mode
 
 A responsive website should follow the theme preference set by the user on their operating system (OS) or web browser while still allowing them to change the mode manually. In this section, we implement the dark/light mode switching functionality and we will learn how to leverage the `useMediaQuery` hook and the `prefers-color-scheme` media query to enable dark mode automatically by checking the user's preference in their OS or browser settings.
 
-### Modify `theme.ts`
+## Modify `theme.ts`
 We had previously set the primary and secondary colors of our theme in the `config/theme.ts` file. However, when using dark mode in our website, we will need to desaturate these colors to maintain a satisfactory level of contrast between the elements on screen and improve readability. Therefore, we will need to remove the primary and secondary color definitions from `theme.ts` since these values will now be set programmatically depending on the theme mode used.
 
 **Delete** the following lines from `theme.ts`:
@@ -25,7 +25,7 @@ palette: {
 ```
 
 
-### Modify `_app.tsx`
+## Modify `_app.tsx`
 Open `pages/_app.tsx` and add the following import statements:
 ```
 import React from 'react'
@@ -197,7 +197,7 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 ```
 
-### Update `Navbar.tsx`
+## Update `Navbar.tsx`
 
 Open the `components/Navbar/Navbar.tsx` file and add the following import statement:
 ```

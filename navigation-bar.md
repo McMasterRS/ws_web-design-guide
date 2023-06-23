@@ -2,14 +2,14 @@
 layout: default
 title: Typography
 parent: Mac Branding
-nav_order: 2
+nav_order: 3
 ---
 
 # Navigation Bar
 
 We will now update our navigation bar to adhere to McMaster Digital Brand Standards:
 
-### Define the Palette Colors & Border Radius
+## Define the Palette Colors & Border Radius
 Start by defining the primary and secondary colors of your theme. The McMaster Digital Brand Standards specify that the primary color should be McMaster Heritage Maroon and the secondary color is McMaster Heritage Gold.
 
 Modify `theme.ts` by adding the following code at the beginning of the `themeOptions` object:
@@ -88,7 +88,7 @@ Save this file and go back to your browser. Your SPA will be automatically updat
 
 Try navigating to the different pages on this website and notice how the Heritage Maroon is applied to different components.
 
-### Create `Navbar.module.css`
+## Create `Navbar.module.css`
 In the `styles` directory of your project, create a new file called `Navbar.module.css`. This file will contain the CSS styles used for the links in our navigation bar. We will define the colors of the links in their active, non-active and hover states:
 - Non-active links should be white and turn heritage gold when you hover over them.
 - Active links should have a white background and the link text should be heritage maroon.
@@ -117,7 +117,7 @@ Add the following lines to `Navbar.module.css`:
 }
 ```
 
-### Create Styled Buttons and Icon Buttons
+## Create Styled Buttons and Icon Buttons
 We will now created styled buttons and icon buttons for use in our navigation bar. 
 
 Create a new directory called `MacComponents` inside the `components` directory. Create a new file in this directory called `MacNavButton.tsx` and add the following code to it:
@@ -150,7 +150,7 @@ export const MacIconNavButton = styled(IconButton)(props => ({
 
 We set the hover color to heritage gold and make the background transparent when hovering over the icon button. We also added a ripple affect to the buttons that appears when the user clicks on it. 
 
-### Update `Navbar.tsx`
+## Update `Navbar.tsx`
 Open the `components/Navbar/Navbar.tsx` file and add the following import statements:
 ```
 import styles from '@/styles/NavBar.module.css'  

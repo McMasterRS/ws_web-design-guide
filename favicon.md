@@ -1,3 +1,10 @@
+---
+layout: default
+title: Favicon
+parent: Mac Branding
+nav_order: 1
+---
+
 # Update the Favicon
 
 Changing the default favicon of a Nex.js application is one of the first things you can do when branding your website.

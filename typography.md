@@ -2,7 +2,7 @@
 layout: default
 title: Typography
 parent: Mac Branding
-nav_order: 1
+nav_order: 2
 ---
 
 # Typography
@@ -10,7 +10,7 @@ nav_order: 1
 McMaster recommends the use of the Roboto family of fonts on all websites associated with the university. 
 To add the Roboto family of fonts to your SPA follow the steps below:
 
-### Define the Typography Styles
+## Define the Typography Styles
 Open the `_document.tsx` file located in the `pages` directory and modify line 6 as follows by deleting `<Head />` and replacing it with:
 ```
 <Head >  
@@ -44,7 +44,7 @@ export default function Document() {
 }
 ```
 
-### Create `theme.ts`
+## Create `theme.ts`
 In the root directory of your project, create a new directory named `config`. You can create the folder using the command line (`mkdir config`) or the GUI.
 Navigate to the newly created `config` directory, and create a new file called `theme.ts` in this directory.
 
@@ -92,7 +92,7 @@ export default themeOptions
 
 In this code snippet, we are defining the different typography variant that can be use in our application. The heading styles conform to the McMaster Digital Brand Standards. The `button` and `settingTitle` typographies define the font style to use for text located in buttons and setting titles respectively. We will cover styling buttons and setting pages in later sections of this workshop.
 
-### Create a Theme Provider
+## Create a Theme Provider
 Open the `_app.tsx_` file located in the `pages` directory and add the following import statements:
 ```
 import {createTheme, ThemeProvider} from '@mui/material/styles'  
@@ -144,9 +144,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
 ```
 
-### Use the Typography Component
+## Use the Typography Component
 
-#### Update `pages/index.tsx`
+### Update `pages/index.tsx`
 Open the `pages/index.tsx` file and add the following import statement to import the MUI Typography component:
 ```
 import Typography from '@mui/material/Typography'
@@ -163,7 +163,7 @@ Notice the following changes:
 - The "Hello World!" text now uses the `h1` style defined in `theme.ts`.
 - Buttons on the index page as well as in the navigation bar now use the `button` typography style defined in `theme.ts`.
 
-#### Update `page_1/index.tsx`
+### Update `page_1/index.tsx`
 Open the `pages/page_1/index.tsx` file and import the MUI Typography component:
 ```
 import Typography from '@mui/material/Typography'
@@ -179,7 +179,7 @@ Using `h1` tag            |  Using `Typogrpahy` component (`h1` variant)
 :-------------------------:|:-------------------------:
 ![old-page-1](assets/img/old-page-1.png)  |  ![new-page-1](assets/img/new-page-1.png)
 
-#### Update `page_2/index.tsx`
+### Update `page_2/index.tsx`
 Repeat the process above for "Page 2".
 Add the following import statement:
 ```
@@ -190,7 +190,7 @@ Delete the line containing the `<h1>` tag inside the `Box` component and replace
 <Typography variant="h1">Page 2</Typography>
 ```
 
-#### Update `support/index.tsx`
+### Update `support/index.tsx`
 Add the following import statement:
 ```
 import Typography from '@mui/material/Typography'
@@ -200,7 +200,7 @@ Delete the line containing the `<h1>` tag inside the `Box` component and replace
 <Typography variant="h1">Help and Support</Typography>
 ```
 
-#### Update `settings/index.tsx`
+### Update `settings/index.tsx`
 
 ![old-settings](assets/img/old-settings.png)
 
