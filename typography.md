@@ -210,12 +210,14 @@ import Typography from '@mui/material/Typography'
 ```
 Delete the line containing the `<h2>` tag after the `Breadcrumbs` component and replace it with the following line of code:
 ```
+{% raw %}
 <Typography
 	sx={{display: 'flex', justifyContent: 'center'}}
 	variant="h2"
 	gutterBottom>
 	Settings
 </Typography>
+{% endraw %}
 ```
 We used the `sx` prop to center the "Settings" title and we used the `gutterBottom` prop to add a bottom margin to the title.
 

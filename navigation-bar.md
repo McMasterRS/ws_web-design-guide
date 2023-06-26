@@ -159,6 +159,7 @@ import {MacIconNavButton, MacNavButton,} from '@/components/MacComponents/MacNav
 
 Next, we will add the McMaster logo to the left-hand side of the navigation bar. Add the following lines of code before the `Typography` component containing the "MacApp" string:
 ```
+{% raw %}
 <Box
 	component="img"
 	sx={{
@@ -170,6 +171,7 @@ Next, we will add the McMaster logo to the left-hand side of the navigation bar.
 	src="/assets/logo.png"
 	style={imgStyle}
 />
+{% endraw %}
 ```
 
 Your navigation bar will now look like this:
@@ -177,6 +179,7 @@ Your navigation bar will now look like this:
 
 Update the `Typography` component containing the "MacApp" string by changing the variant from `h3` to `h5` and adding the following prop `className={styles.title}` after the `sx` prop. The typography component should now look like this:
 ```
+{% raw %}
 <Typography
 	variant="h3"
 	noWrap
@@ -192,6 +195,7 @@ Update the `Typography` component containing the "MacApp" string by changing the
 >
 	MacApp
 </Typography>
+{% endraw %}
 ```
 
 Old "MacApp" Title           |  Styled "MacApp" Title
@@ -207,6 +211,7 @@ We will now update the page links in the navigation to change color when the use
 Inspect the `Box` component after the the `Typography` component containing the "MacApp" string. Notice that the page links are rendered using the standard MUI `Button` component.
 We will modify the page links to use the custom `MacNavButton` component that we created earlier instead of the standard MUI `Button` component as shown in the code snippet below:
 ```
+{% raw %}
 <Box sx={{flexGrow: 1, display: 'flex'}}>
 	{pages.map(page => (
 		<MacNavButton
@@ -224,6 +229,7 @@ We will modify the page links to use the custom `MacNavButton` component that we
 		</MacNavButton>
 	))}
 </Box>
+{% endraw %}
 ```
 We also conditionally set the `className` prop to display a white oval-shaped background on the button corresponding to the current active page.
 
@@ -233,6 +239,7 @@ Similarly, we will update the icon buttons in the navigation bar to use the afor
 
 Locate the `IconButton` component containing the  `<Brightness4Icon />` and `<Brightness4Icon />` components and change it to a `MacIconNavButton` component as show below:
 ```
+{% raw %}
 <MacIconNavButton
 	sx={{ml: 1}}
 	color="inherit"
@@ -243,6 +250,7 @@ Locate the `IconButton` component containing the  `<Brightness4Icon />` and `<Br
 		<Brightness4Icon />
 	)}
 </MacIconNavButton>
+{% endraw %}s
 ```
 
 Next, change the `IconButton` component containing the `<SettingsIcon />` component to a `MacIconNavButton` controller and add the `classNames` prop:

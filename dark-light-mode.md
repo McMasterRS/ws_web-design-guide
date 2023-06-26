@@ -213,6 +213,7 @@ const colorMode = React.useContext(ColorModeContext)
 
 Add the `onClick` prop to the dark/light mode toggle in the navigation bar as shown below:
 ```
+{% raw %}
 <MacIconNavButton
 	sx={{ml: 1}}
 	color="inherit"
@@ -224,6 +225,7 @@ Add the `onClick` prop to the dark/light mode toggle in the navigation bar as sh
 		<Brightness4Icon />
 	)}
 </MacIconNavButton>
+{% endraw %}
 ```
 
 Go back to your browser and try switching mode by using the sundial icon in the navigation bar.

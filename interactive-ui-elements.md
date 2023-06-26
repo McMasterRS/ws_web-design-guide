@@ -96,6 +96,7 @@ import {MacButton} from '@/components/MacComponents/MacButton'
 
  Locate the "Download" `Button` component and change it to use the  `MacButton` component as shown below:
 ```
+{% raw %}
 <MacButton
 	id="download-button"
 	sx={{
@@ -118,6 +119,7 @@ import {MacButton} from '@/components/MacComponents/MacButton'
 >
 	Download
 </MacButton>
+{% endraw %}s
 ```
 
 The styled download button will look like this:
@@ -167,6 +169,7 @@ You can remove `SpeedDial` from the following import statement `import {SpeedDia
 
 Replace the `SpeedDial` component with a `MacSpeedDial` component and add the `mainColor` prop as shown below:
 ```
+{% raw %}
 <MacSpeedDial
 	ariaLabel="Demo SpeedDial"
 	sx={{
@@ -191,6 +194,7 @@ Replace the `SpeedDial` component with a `MacSpeedDial` component and add the `m
 		/>
 	))}
 </MacSpeedDial>
+{% endraw %}
 ```
 
 Save the file and navigate to "Page 2" in your browser. The Speed Dial will now turn grey when you hover over it:
