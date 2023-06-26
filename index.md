@@ -10,7 +10,7 @@ The [McMaster Digital Brand Standards](https://brand.mcmaster.ca/app/uploads/201
 
 ![NextJS-MUI](assets/img/nextjs-mui.png)_Image retrieved from [itnext.io](https://itnext.io/next-js-with-material-ui-7a7f6485f671)_
 
-In this beginner workshop, participants will learn how to style Material UI (MUI) components in a Next.js single-page application to fit the McMaster Digital Brand Standards. We will also learn how to scale the user interface for mobile devices and ensure that our web application is AODA-compliant using the Wave tool.
+In this beginner workshop, participants will learn how to style Material UI (MUI) components in a Next.js single-page application to fit the McMaster Digital Brand Standards. We will also learn how to scale the user interface for mobile devices and ensure that our web application is AODA compliant using the Wave tool.
 
 No previous experience with Next.js or MUI is required. Familiarity with TypeScript and React will be helpful but is not necessary.
 
