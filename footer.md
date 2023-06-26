@@ -7,7 +7,7 @@ nav_order: 1
 
 # Footer
 
-A website's footer typically contains copyright notices, disclaimers, and links to a support page, contact form or social media accounts. Keeping the footer pinned at the bottom of the screen regardless of the user's current position on the page may be desirable on large displays. However, on small screens, the footer should only be visible when the user scrolls to the bottom of the page. In this section, we will learn how to modify a footer's position depending on the screen size.
+A website's footer typically contains copyright notices, disclaimers, and links to a support page, contact form or social media accounts. Keeping the footer pinned at the bottom of the screen regardless of the user's current position on the page may be desirable on large displays. However, on small screens the footer should only be visible when the user scrolls to the bottom of the page. In this section, we will learn how to modify a footer's position depending on the screen size.
 
 ## Modify the Footer Position
 Open the `components/Footer/Footer.tsx` file and locate the `Paper` component inside the `return` statement. 
