@@ -1,8 +1,8 @@
-# Mac-branded Website Development
+# Design Guidelines for McMaster Websites
 
-Materials for the McMaster Research Software workshop: **Mac-branded Website Development**  
+Materials for the McMaster Research Software workshop: **Design Guidelines for McMaster Websites**  
 
-This repository contains workshop files, as well as files used to create the [workshop webpage](https://mcmasterrs.github.io/mac-web-dev) with GitHub Pages.  
+This repository contains workshop files, as well as files used to create the [workshop webpage](https://mcmasterrs.github.io/ws_web-design-guide) with GitHub Pages.  
 
 Contributions by the following individuals: 
 - Workshop content created by Elias Eid
