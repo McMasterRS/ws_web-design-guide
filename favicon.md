@@ -9,7 +9,7 @@ nav_order: 1
 
 Changing the default favicon of a Next.js application is one of the first things you can do when branding your website.
 
-The demo app includes two favicons: the default Next.js one (`public/favicon2.ico`) and the McMaster favicon (`public/favicon.ico`), which was downloaded from [McMaster University Brand Standards Website Favicon Folder](https://brand-resources.mcmaster.ca/asset-bank/action/browseItems?categoryId=1516&categoryTypeId=2&cachedCriteria=1).
+The demo app includes two favicons: the default Next.js one (`public/favicon2.ico`) and the McMaster favicon (`public/favicon.ico`), which was downloaded from the [McMaster University Brand Standards Website Favicon Folder](https://brand-resources.mcmaster.ca/asset-bank/action/browseItems?categoryId=1516&categoryTypeId=2&cachedCriteria=1).
 
 To change the favicon of your SPA, open the `pages/index.tsx` file and modify the `Head` component by changing the `href` prop to `/favicon.ico` as shown below:
 
