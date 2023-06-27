@@ -14,7 +14,7 @@ We will start by limiting the current navigation bar setup to medium and large d
 
 Open the `components/Navbar/Navbar.tsx` file and replace all the existing `display: 'flex'` lines with `display: {xs: 'none', md: 'flex'}`.
 
-## Add Drawer
+## Add a Drawer
 Start by adding the following import statements to `Navbar.tsx`:
 ```
 import Drawer from "@mui/material/Drawer";  
