@@ -64,6 +64,7 @@ Alternatively, you can switch branches using your IDE's GUI:
 _Checking out  the `mac_branding` branch using Visual Studio Code_
 
 ![checkout-webstorm](assets/img/checkout-webstorm.png)
+
 _Checking out  the `mac_branding` branch using WebStorm_
 
 3. Install `next` using the following command:
