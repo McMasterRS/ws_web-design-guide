@@ -232,7 +232,7 @@ Add the `onClick` prop to the dark/light mode toggle in the navigation bar as sh
 Go back to your browser and try switching mode by using the sundial icon in the navigation bar.
 ![dark-mode](assets/img/dark-mode.png)
 
-![light-mode](assets/img/color-index.png)
+![light-mode](assets/img/light-mode.png)
 
 The chosen mode is automatically applied to all pages of the website. Try navigating to "Page1", "Page 1", "Page 2" and the "Settings" page. They will all automatically use the chosen mode and the text and UI element colors will change to maintain readability.
 
