@@ -1,5 +1,5 @@
 title: Design Guidelines for McMaster Websites # *** Enter workshop title here
-github_repo_url: "https://mcmasterrs.github.io/ws_web-design-guide" # ***Enter workshop URL (in github pages) here
+github_repo_url: "https://mcmasterrs.github.io/ws_web-design-guide/" # ***Enter workshop URL (in github pages) here
 gh_edit_repository: "https://github.com/McMasterRS/ws_web-design-guide" #*** ENTER the github URL for your repo
 
 subtitle: "Research Software Development Workshop - Design Guidelines for McMaster Websites"
