@@ -31,7 +31,7 @@ Re-run the Wave tool on "Page 1". The empty button error will no longer be shown
 
 ![empty-button-fixed](assets/img/empty-button-fixed.png)
 
-Shrink your browser window to trigger the mobile version of "Page 1" and run the Wave tool. You will find that the page has another empty button error caused by the shrunken "Download" button that no longer text in it. 
+Shrink your browser window to trigger the mobile version of "Page 1" and run the Wave tool. You will find that the page has another empty button error caused by the shrunken "Download" button that no longer has text in it. 
 
 ![empty-button-download](assets/img/empty-button-download.png)
 
@@ -71,10 +71,10 @@ Locate the `MacButton` "Download" component and wrap it in a `Tooltip` component
 </Tooltip>
 {% endraw %}
 ```
-The tooltip message will only be display on the small variant of the "Download" button since we use breakpoints to conditionally set the tooltip title. 
+The tooltip message will only be displayed on the small variant of the "Download" button since we use breakpoints to conditionally set the tooltip title. 
 
 ![download-tooltip](assets/img/download-tooltip.png)
 
-Reload the page and re-run the Wave tool. The error should now be fixed because tooltip message can be read by screen readers.
+Reload the page and re-run the Wave tool. The error should now be fixed because tooltip messages can be read by screen readers.
 
 ![empty-download-fixed](assets/img/empty-download-fixed.png)

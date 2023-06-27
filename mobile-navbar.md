@@ -7,7 +7,7 @@ nav_order: 2
 
 # Navigation Bar
 
-We have already styled the navigation bar in our SPA. However, the current design not scale properly on smaller displays. We will modify the navigation bar to make use of the MUI `Drawer` component on smaller screens.
+We have already styled the navigation bar in our SPA. However, the current design does not scale properly on smaller displays. We will modify the navigation bar to make use of the MUI `Drawer` component on smaller screens.
 
 ## Limit Current Configuration to Medium/Large Displays
 We will start by limiting the current navigation bar setup to medium and large display using breakpoints.

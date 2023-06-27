@@ -7,7 +7,7 @@ nav_order: 4
 
 # Dark and Light Mode
 
-A responsive website should follow the theme preference set by the user on their operating system (OS) or web browser while still allowing them to change the mode manually. In this section, we implement the dark/light mode switching functionality and we will learn how to leverage the `useMediaQuery` hook and the `prefers-color-scheme` media query to enable dark mode automatically by checking the user's preference in their OS or browser settings.
+A responsive website should follow the theme preference set by the user on their operating system (OS) or web browser while still allowing them to change the mode manually. In this section, we will implement the dark/light mode functionality and we will learn how to leverage the `useMediaQuery` hook and the `prefers-color-scheme` media query to enable dark mode automatically by checking the user's preference in their OS or browser settings.
 
 ## Modify `theme.ts`
 We had previously set the primary and secondary colors of our theme in the `config/theme.ts` file. However, when using dark mode in our website, we will need to desaturate these colors to maintain a satisfactory level of contrast between the elements on screen and improve readability. Therefore, we will need to remove the primary and secondary color definitions from `theme.ts` since these values will now be set programmatically depending on the theme mode used.
@@ -39,7 +39,7 @@ export const ColorModeContext = React.createContext({
 })
 ```
 
-Next, we will determine if the user currently has dark mode enabled on their system by reading the value of the media `prefers-color-scheme`. We will also use the React state hook to create a `mode` constant with a `null` initial value and a `setColor` function that is used to update the `mode` constant.
+Next, we will determine if the user currently has dark mode enabled on their system by reading the value of the  `prefers-color-scheme` media query. We will also use the React state hook to create a `themeMode` constant with a `null` initial value and a `setThemeMode` function that is used to update the `mode` constant.
 
 Add the following lines of the code at the top of the `App` function:
 ```
@@ -86,7 +86,7 @@ const theme = React.useMemo(
 	[themeMode, prefersDarkMode]
 )
 ```
-This updated declaration utilizes the React `useMemo` hook to create and cache a theme value. The value of the `mode` attribute is determined by examining the the value of the `themeMode` constant we created earlier. The diagram below explains the conditional logic used to determine the value of `mode`:
+This updated declaration utilizes the React `useMemo` hook to create and cache the theme value. The value of the `mode` attribute is determined by examining the the value of the `themeMode` constant we created earlier. The diagram below explains the conditional logic used to determine the value of `mode`:
 
 ![logic-mode](assets/img/logic-mode.png)
 When using dark mode, the primary and secondary colors of our theme are desaturated to retain readability and enhance contrast. The values of these colors are now determined programmatically as shown in the diagrams below:

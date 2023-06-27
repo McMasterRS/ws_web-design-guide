@@ -11,7 +11,7 @@ A website's footer typically contains copyright notices, disclaimers, and links 
 
 ## Modify the Footer Position
 Open the `components/Footer/Footer.tsx` file and locate the `Paper` component inside the `return` statement. 
-Notice that the `position` prop is set to `fixed` , which is the footer is always visible at the bottom of the page. We will modify this prop to be set conditionally depending on the screen size using the MUI breakpoints API. 
+Notice that the `position` prop is set to `fixed` , which is why the footer is always visible at the bottom of the page. We will modify this prop to be set conditionally depending on the screen size using the MUI breakpoints API. 
 
 Add the following import statement to `Footer.tsx`:
 ```

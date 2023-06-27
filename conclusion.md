@@ -8,6 +8,7 @@ nav_order: 7
 
 Throughout this workshop, we learned the basics of styling Material UI components to conform to the McMaster Digital Brand Standards. Your final Next.js SPA has the following features :
 - Styled text using the `Typography` component
+- A theme that use the McMaster Heritage Maroon and Heritage Gold colors
 - A styled responsive navigation bar with two configurations depending on the screen size
 - A responsive footer that adapts its layout and position to the device's screen size
 - Support for dark and light mode (in addition to following the user preference)
@@ -15,7 +16,7 @@ Throughout this workshop, we learned the basics of styling Material UI component
 - A styled speed dial component
 - A styled file input widget
 - A styled dropdown menu
-- Vertical tabs that make use of a drawer on mobile
+- Vertical tabs that make use of a drawer on mobile devices
 - AODA compliance
 
 While we only scratched the surface of what you can do with Next.js and Material UI, we hope that this workshop provided you with the basic knowledge needed to style your McMaster website. 

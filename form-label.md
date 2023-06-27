@@ -20,7 +20,7 @@ Add an `htmlFor` prop to the `InputLabel` component as shown below:
 </InputLabel>
 ```
 
-Next, we will add an `id` to the `Select` component using `inputProps`. The `id` of the `Select` component has to match the one enter in the `htmlFor` field of the `InputLabel`:
+Next, we will add an `id` to the `Select` component using `inputProps`. The `id` of the `Select` component has to match the one entered in the `htmlFor` field of the `InputLabel`:
 ```
 {% raw %}
 <Select

@@ -7,7 +7,7 @@ nav_order: 5
 
 # Interactive UI Elements
 
-Modern websites requires the use of UI elements that not only allow the user to perform a wide range of functions, but also react to the user's actions in an intuitive manner. In this section, we will learn how to style certain MUI components to conform to the stylistic guidelines set by McMaster Digital Brand Standards Manual.
+Modern websites require the use of UI elements that not only allow the user to perform a wide range of functions, but also react to the user's actions in an intuitive manner. In this section, we will learn how to style certain MUI components to conform to the stylistic guidelines set by McMaster Digital Brand Standards Manual.
 
 ## Buttons
 
@@ -63,7 +63,9 @@ Notice how we used the `mainColor` prop to determine the color of the button and
 
 Save the file and go back to your browser. The buttons on the main page should now look like this:
 
+
 ![mac-buttons](assets/img/mac-buttons.png)
+
 Try hovering over each button and notice how they change color.
 
 Hovering Over Primary Button            |  Hovering Over Secondary Button
@@ -87,7 +89,7 @@ Save the file and navigate to "Page 1" in your browser. Try hovering over the ba
 
 ![styled-back](assets/img/styled-back.png)
 ## Buttons With a Dropdown Menu
-The styled `MacButton` that we created earlier can be combined with a dropdown menu to create a button that allows the user to execute mutually exclusive functions that fall under the same category e.g., a download button that lets the user choose the file format. Our SPA already has regular MUI `Button` with a dropdown menu on "Page 1". We will update the button to use the the `secondary` variant of the `MacButton` component.
+The styled `MacButton` that we created earlier can be combined with a dropdown menu to create a button that allows the user to execute mutually exclusive functions that fall under the same category e.g., a download button that lets the user choose the file format. Our SPA already has a regular MUI `Button` with a dropdown menu on "Page 1". We will update the button to use the the `secondary` variant of the `MacButton` component.
 
 Open `page_1/index.tsx` and replace the `Button` import statement with following import statement:
 ```
@@ -128,7 +130,7 @@ The styled download button will look like this:
 
 ## Speed Dials
 
-Material UI offers a speed `SpeedDial` component that allows developers to create a floating action button, which can display related actions. The `SpeedDial` component is often used to group action that manipulate the state of an object e.g., "edit", "delete", and "save". We will now learn how to create a styled `SpeedDial` component that adheres to McMaster Branding Standards.
+Material UI offers a `SpeedDial` component that allows developers to create a floating action button, which can display related actions. The `SpeedDial` component is often used to group action that manipulate the state of an object e.g., "edit", "delete", and "save". We will now learn how to create a styled `SpeedDial` component that adheres to the McMaster Branding Standards.
 
 Create a `MacSpeedDial.tsx` file in the `components/MacComponents` directory and add the following lines of code to it:
 ```
