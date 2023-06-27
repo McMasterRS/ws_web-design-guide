@@ -89,6 +89,7 @@ const theme = React.useMemo(
 This updated declaration utilizes the React `useMemo` hook to create and cache the theme value. The value of the `mode` attribute is determined by examining the the value of the `themeMode` constant we created earlier. The diagram below explains the conditional logic used to determine the value of `mode`:
 
 ![logic-mode](assets/img/logic-mode.png)
+
 When using dark mode, the primary and secondary colors of our theme are desaturated to retain readability and enhance contrast. The values of these colors are now determined programmatically as shown in the diagrams below:
 ![logic-mode](assets/img/logic-primary.png)
 ![logic-mode](assets/img/logic-secondary.png)
