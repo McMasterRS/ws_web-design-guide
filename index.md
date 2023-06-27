@@ -50,23 +50,28 @@ Once you have Node.js installed, you can clone the demo SPA used in this worksho
 You will now have an `wsr_web-design-guide` repo on your local machine.
 
 ### Start the Development Server
-`cd` into the your project directory: 
+1. `cd` into the your project directory: 
 ~~~
 cd wsr_web-design-guide
 ~~~
 
-Checkout the `mac-branding` branch using the following command:
+2. Checkout the `mac-branding` branch using the following command:
 ```
 git checkout mac-branding
 ```
 Alternatively, you can switch branches using your IDE's GUI:
 ![checkout-vsc](assets/img/checkout-vsc.png)
-_Checking out  the `mac_branding` branch using Visual Studio Code
+_Checking out  the `mac_branding` branch using Visual Studio Code_
 
 ![checkout-webstorm](assets/img/checkout-webstorm.png)
-_Checking out  the `mac_branding` branch using WebStorm
+_Checking out  the `mac_branding` branch using WebStorm_
 
-Start the development server:
+3. Install `next` using the following command:
+```
+npm i next
+```
+
+4. Start the development server:
 ~~~
 npm run dev
 ~~~
