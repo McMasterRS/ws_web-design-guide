@@ -78,6 +78,6 @@ npm run dev
 ~~~
 
 ### View the the Single-Page Application
-Open your browser of choice and navigate to: `localhost:3000`
+Open your browser of choice and navigate to `localhost:3000`.
 You should be presented with the following page:
 ![landing](assets/img/landing.png)

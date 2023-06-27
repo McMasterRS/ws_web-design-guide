@@ -7,7 +7,7 @@ nav_order: 3
 
 # Navigation Bar
 
-We will now update our navigation bar to adhere to McMaster Digital Brand Standards:
+We will now update our navigation bar to adhere to the McMaster Digital Brand Standards:
 
 ## Define the Palette Colors & Border Radius
 Start by defining the primary and secondary colors of your theme. The McMaster Digital Brand Standards specify that the primary color should be McMaster Heritage Maroon and the secondary color is McMaster Heritage Gold.
@@ -23,7 +23,7 @@ palette: {
 	}  
 },
 ```
-In this code snippet, we are defining the primary and secondary colors of our website using the hex values that corresponding to the McMaster Heritage Maroon and Heritage Gold colors.
+In this code snippet, we are defining the primary and secondary colors of our website using the hex values that correspond to the McMaster Heritage Maroon and Heritage Gold colors.
 
 Next, we will set the border radius in the theme to 28 inside `themeOptions`:
 ```
@@ -31,7 +31,7 @@ shape: {
 	borderRadius: 28,  
 },
 ```
-Note that the shape `borderRadius` sets the global value of the border radius for all MUI components, we will modify the border radius of individual components as needed just like we did for the `MuiPaper` component.
+Note that the shape `borderRadius` sets the global value of the border radius for all MUI components, we will modify the border radius of individual components as needed in future sections of this workshop.
 
 Your `theme.ts` file should now look like this:
 ```
@@ -86,12 +86,12 @@ Save this file and go back to your browser. Your SPA will be automatically updat
 
 ![color-index](assets/img/color-index.png)
 
-Try navigating to the different pages on this website and notice how the Heritage Maroon is applied to different components.
+Try navigating to the different pages on this website and notice how the Heritage Maroon color is applied to different components.
 
 ## Create `Navbar.module.css`
 In the `styles` directory of your project, create a new file called `Navbar.module.css`. This file will contain the CSS styles used for the links in our navigation bar. We will define the colors of the links in their active, non-active and hover states:
-- Non-active links should be white and turn heritage gold when you hover over them.
-- Active links should have a white background and the link text should be heritage maroon.
+- Non-active links should be white and turn Heritage Gold when you hover over them.
+- Active links should have a white background and the link text should be Heritage Maroon.
 
 Add the following lines to `Navbar.module.css`:
 
@@ -148,7 +148,7 @@ export const MacIconNavButton = styled(IconButton)(props => ({
 })) as typeof IconButton
 ```
 
-We set the hover color to heritage gold and make the background transparent when hovering over the icon button. We also added a ripple affect to the buttons that appears when the user clicks on it. 
+We set the hover color to Heritage Fold and made the background transparent when hovering over the icon button. We also added a ripple affect to the buttons that appears when the user clicks on them. 
 
 ## Update `Navbar.tsx`
 Open the `components/Navbar/Navbar.tsx` file and add the following import statements:
@@ -175,6 +175,7 @@ Next, we will add the McMaster logo to the left-hand side of the navigation bar.
 ```
 
 Your navigation bar will now look like this:
+
 ![logo-navbar](assets/img/logo-navbar.png)
 
 Update the `Typography` component containing the "MacApp" string by changing the variant from `h3` to `h5` and adding the following prop `className={styles.title}` after the `sx` prop. The typography component should now look like this:
@@ -202,7 +203,7 @@ Old "MacApp" Title           |  Styled "MacApp" Title
 :-------------------------:|:-------------------------:
 ![old-macapp](assets/img/old-macapp.png)  |  ![styled-macapp](assets/img/styled-macapp.png)
 
-We used the `classNames` prop to indicate that the "MacApp" `typography` component should use the `title` CSS style define in `Navbar.module.css`. 
+We used the `classNames` prop to indicate that the "MacApp" `Typography` component should use the `title` CSS style defined in `Navbar.module.css`. 
 Try hovering over the "MacApp" title in your browser, the text should turn Heritage Gold to indicate that it is a clickable link as shown in the image below.
 
 ![hover-macapp](assets/img/hover-macapp.png)
