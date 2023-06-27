@@ -7,6 +7,7 @@ nav_order: 7
 # Conclusion
 
 Throughout this workshop, we learned the basics of styling Material UI components to conform to the McMaster Digital Brand Standards. Your final Next.js SPA has the following features :
+- A McMaster favicon
 - Styled text using the `Typography` component
 - A theme that uses the McMaster Heritage Maroon and Heritage Gold colors
 - A styled responsive navigation bar with two configurations depending on the screen size
