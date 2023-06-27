@@ -10,9 +10,13 @@ The [McMaster Digital Brand Standards](https://brand.mcmaster.ca/app/uploads/201
 
 ![NextJS-MUI](assets/img/nextjs-mui.png)_Image retrieved from [itnext.io](https://itnext.io/next-js-with-material-ui-7a7f6485f671)_
 
-In this beginner workshop, participants will learn how to style Material UI (MUI) components in a Next.js single-page application to fit the McMaster Digital Brand Standards. We will also learn how to scale the user interface for mobile devices and ensure that our web application is AODA compliant using the Wave tool.
+In this beginner workshop, participants will learn how to style Material UI (MUI) components in a Next.js single-page application (SPA) to fit the McMaster Digital Brand Standards. We will also learn how to scale the user interface for mobile devices and ensure that our web application is AODA compliant using the Wave tool.
 
 No previous experience with Next.js or MUI is required. Familiarity with TypeScript and React will be helpful but is not necessary.
+
+## Prerequisites
+- **Git**: Git should be installed on your local machine to clone the workshop single-page application repository. Please consult the following [guide](https://github.com/git-guides/install-git) if you need help installing git on your machine.
+- **IDE (Integrated Development Environment)**: You will need to have an IDE installed on your computer to easily modify the workshop SPA files. We recommend using [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/).
 
 ## Pre-workshop Setup
 
@@ -41,15 +45,27 @@ sudo apt install npm
 
 ### Clone the Next.js Workshop SPA
 Once you have Node.js installed, you can clone the demo SPA used in this workshop by opening a terminal window and running the following command:
-```git clone https://github.com/McMasterRS/rsd-workshop-app.git```
+```git clone https://github.com/McMasterRS/wsr_web-design-guide.git```
 
-You will now have an `rsd-workshop-app` repo on your local machine.
+You will now have an `wsr_web-design-guide` repo on your local machine.
 
 ### Start the Development Server
 `cd` into the your project directory: 
 ~~~
-cd rsd-workshop-app
+cd wsr_web-design-guide
 ~~~
+
+Checkout the `mac-branding` branch using the following command:
+```
+git checkout mac-branding
+```
+Alternatively, you can switch branches using your IDE's GUI:
+![checkout-vsc](assets/img/checkout-vsc.png)
+_Checking out  the `mac_branding` branch using Visual Studio Code
+
+![checkout-webstorm](assets/img/checkout-webstorm.png)
+_Checking out  the `mac_branding` branch using WebStorm
+
 Start the development server:
 ~~~
 npm run dev

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Interactive UI Elements
-parent: Mac Branding
+parent: McMaster Branding
 nav_order: 5
 ---
 

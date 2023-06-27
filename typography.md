@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Typography
-parent: Mac Branding
+parent: McMaster Branding
 nav_order: 2
 ---
 

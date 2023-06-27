@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Dark and Light Mode
-parent: Mac Branding
+parent: McMaster Branding
 nav_order: 4
 ---
 
