@@ -20,7 +20,7 @@ Open the `_document.tsx` file located in the `pages` directory and modify line 6
 	/>  
 </Head>
 ```
-This line of code downloads the needed Roboto font variants from the Google Fonts.
+This line of code downloads the needed Roboto font variants from Google Fonts.
 
 The `_document.tsx` file should now contain the following code:
 ```
