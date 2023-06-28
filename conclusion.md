@@ -31,3 +31,5 @@ We recommend the following resources if you want to learn more about Next.js, Ma
 The complete version of this demo website is available on the `final` branch of the following GitHub repo: [McMasterRS/wsr_web-design-guide](https://github.com/McMasterRS/wsr_web-design-guide).
 
 If you want to lean how to create and style the Next.js SPA used in this demo from scratch, please consult the [McMaster Branding in Web Development](https://mcmasterrs.github.io/lm_mac-branding) learning module. 
+
+If you require additional help with styling your McMaster website or if you happen to be using a different tech stack or framework that the ones covered in this workshop, please feel free to book a consultation with the Research Software Development team by emailing [rsd@mcmaster.ca](mailto:rsd@mcmaster.ca).

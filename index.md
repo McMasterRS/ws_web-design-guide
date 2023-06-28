@@ -8,6 +8,9 @@ nav_order: 1
 
 The [McMaster Digital Brand Standards](https://brand.mcmaster.ca/app/uploads/2019/04/digital-guidelines.pdf) PDF document provides a good overview of the brand guidelines designed to ensure recognition of the McMaster University brand and consistency of its message. The design guidelines presented in this workshop were pulled from this PDF document and modified to apply to Material UI (MUI) components.
 
+This workshop uses the Next.js framework in conjunction with the Material UI (MUI) library. If you are using a different tech stack or framework that the ones in this workshop, please feel free to book a consultation with the Research Software Development team by emailing [rsd@mcmaster.ca](mailto:rsd@mcmaster.ca).
+
+
 ![NextJS-MUI](assets/img/nextjs-mui.png)_Image retrieved from [itnext.io](https://itnext.io/next-js-with-material-ui-7a7f6485f671)_
 
 In this beginner workshop, participants will learn how to style Material UI (MUI) components in a Next.js single-page application (SPA) to fit the McMaster Digital Brand Standards. We will also learn how to scale the user interface for mobile devices and ensure that our web application is AODA compliant using the Wave tool.
