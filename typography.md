@@ -7,7 +7,7 @@ nav_order: 2
 
 # Typography
 
-McMaster recommends the use of the Roboto family of fonts on all websites associated with the university. 
+We now learn how to use custom fonts and typography styles in a web application. McMaster recommends the use of the Roboto family of fonts on all websites associated with the university, so we will import and use these fonts as an example. 
 To add the Roboto family of fonts to your SPA follow the steps below:
 
 ## Define the Typography Styles

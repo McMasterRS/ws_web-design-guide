@@ -2,7 +2,7 @@
 layout: default
 title: Dark and Light Mode
 parent: McMaster Branding
-nav_order: 4
+nav_order: 5
 ---
 
 # Dark and Light Mode

@@ -2,7 +2,7 @@
 layout: default
 title: Interactive UI Elements
 parent: McMaster Branding
-nav_order: 5
+nav_order: 6
 ---
 
 # Interactive UI Elements

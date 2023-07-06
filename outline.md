@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Outline
-nav_order: 3
+nav_order: 4
 ---
 
 ## Goal of this workshop
@@ -13,14 +13,14 @@ The goal of this workshop is to learn how to style **some** MUI components using
 At the end of this workshop, attendees will be able to:
 
 - Style a Next.js application with MUI components
-- Use the recommended McMaster typography fonts and styles
+- Use custom typography fonts and styles
 - Style common interactive UI elements like buttons, speed dials and file input widgets
-- Modify MUI components to scale properly on small screen devices
+- Modify web application components to scale properly on small screen devices
 - Evaluate your website for AODA compliance using the WAVE tool and fix common accessibility errors
 
 ## Table of Content
 
-1. [McMaster Branding](mac-branding.md)
+1. [Styling Modern Web Apps](styling.md)
 	1. [Favicon](favicon.md)
 	2. [Typography](typography.md)
 	3. [Navigation Bar](navigation-bar.md)
