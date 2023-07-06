@@ -7,11 +7,11 @@ nav_order: 3
 
 # Empty Button Error
 
-Navigate to "Page 1" (using the medium/large screen UI) and run the Wave tool. The tool will identify 1 error.
+Navigate to "Page 1" (using the medium/large screen UI) and run the WAVE tool. The tool will identify 1 error.
 
 ![empty-button](assets/img/empty-button.png)
 
-Open the "Details" tab in the Wave sidebar to find more details regarding the errors and alerts. We can now see that the error is caused by an empty button, i.e., a button without any text or tooltip message. Screen readers cannot properly process empty buttons, so we will need to address this issue to ensure that our website meets the accessibility standards.
+Open the "Details" tab in the WAVE sidebar to find more details regarding the errors and alerts. We can now see that the error is caused by an empty button, i.e., a button without any text or tooltip message. Screen readers cannot properly process empty buttons, so we will need to address this issue to ensure that our website meets the accessibility standards.
 
 Pull the website's HTML code by clicking on the turquoise "Code" button at the bottom of the screen. With the code view pulled up, click on the red button under "1 X Empty button" and you will redirected to the HTML code section that corresponds to the empty button. 
 
@@ -27,11 +27,11 @@ Open the `components/BreadCrumbs/BreadCrumbs.tsx` file and locate the `MacButton
 ```
 
 Go back to your browser and try hovering over the back button. You will see a the title message appear.
-Re-run the Wave tool on "Page 1". The empty button error will no longer be shown.
+Re-run the WAVE tool on "Page 1". The empty button error will no longer be shown.
 
 ![empty-button-fixed](assets/img/empty-button-fixed.png)
 
-Shrink your browser window to trigger the mobile version of "Page 1" and run the Wave tool. You will find that the page has another empty button error caused by the shrunken "Download" button that no longer has text in it. 
+Shrink your browser window to trigger the mobile version of "Page 1" and run the WAVE tool. You will find that the page has another empty button error caused by the shrunken "Download" button that no longer has text in it. 
 
 ![empty-button-download](assets/img/empty-button-download.png)
 
@@ -75,6 +75,6 @@ The tooltip message will only be displayed on the small variant of the "Download
 
 ![download-tooltip](assets/img/download-tooltip.png)
 
-Reload the page and re-run the Wave tool. The error should now be fixed because tooltip messages can be read by screen readers.
+Reload the page and re-run the WAVE tool. The error should now be fixed because tooltip messages can be read by screen readers.
 
 ![empty-download-fixed](assets/img/empty-download-fixed.png)

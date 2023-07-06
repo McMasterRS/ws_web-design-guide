@@ -6,9 +6,13 @@ has_children: true
 has_toc: true
 ---
 
+# Mobile UI
+
+One of the crucial aspects when building a web application is to ensure that it can be accessed and utilized on devices with various form factors. Having a responsive UI allows the web application to adapt to different screen sizes or devices. This feature enables individual to access the website via a mobile phone or a desktop computer. In this section, we will learn how to scale some common UI elements to display properly on mobile devices. We will learn how to modify the appearance and the behavior of the footer, the navigation as well as buttons and vertical tabs.
+
 ## Pre-workshop Setup
 
-If you did not attend the "McMaster Branding" workshop, you will need to clone the `wsr_web-design-guide` repo using the following command:
+If you did not attend the "Styling Modern Web Apps" workshop, you will need to clone the `wsr_web-design-guide` repo using the following command:
 ```
 git clone https://github.com/McMasterRS/wsr_web-design-guide.git
 ```

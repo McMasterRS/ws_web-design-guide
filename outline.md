@@ -6,7 +6,7 @@ nav_order: 4
 
 ## Goal of this workshop
 
-The goal of this workshop is to learn how to style **some** MUI components using the McMaster Digital Branding Guidelines. You will not be an expert on MUI by the end of the class and this is okay. We want to cover the basics of MUI styling, but as with any skill, mastering it takes practice. You will also learn the basics of mobile user interface design as well as how to use the Wave tool to evaluate your website for AODA compliance.
+The goal of this workshop is to learn how to style **some** MUI components using the McMaster Digital Branding Guidelines. You will not be an expert on MUI by the end of the class and this is okay. We want to cover the basics of MUI styling, but as with any skill, mastering it takes practice. You will also learn the basics of mobile user interface design as well as how to use the WAVE tool to evaluate your website for AODA compliance.
 
 ### Learning Objectives
 

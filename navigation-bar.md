@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Navigation Bar
-parent: McMaster Branding
+parent: Styling Modern Web Apps
 nav_order: 4
 ---
 

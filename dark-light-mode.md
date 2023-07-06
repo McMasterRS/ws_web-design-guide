@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Dark and Light Mode
-parent: McMaster Branding
+parent: Styling Modern Web Apps
 nav_order: 5
 ---
 

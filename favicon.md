@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Favicon
-parent: McMaster Branding
+parent: Styling Modern Web Apps
 nav_order: 1
 ---
 

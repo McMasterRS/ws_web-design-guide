@@ -4,7 +4,7 @@ title: Introduction
 nav_order: 1
 ---
 
-# A Guide to Building JavaScript Websites
+# Building Modern JavaScript Websites
 
 ![intro-image](assets/img/intro-img.png)
 _Image retrieved from [tillerdigital.com]([7 challenges in web application design and development | Tiller Digital](https://tillerdigital.com/blog/7-challenges-in-web-application-development/))_

@@ -7,7 +7,7 @@ nav_order: 4
 
 # Missing Form Label Error
 
-Navigate to the "Settings" page by clicking on the gear icon and evaluate the page using the Wave tool. The "Details" tab of the Wave tool shows a missing form label error.
+Navigate to the "Settings" page by clicking on the gear icon and evaluate the page using the WAVE tool. The "Details" tab of the WAVE tool shows a missing form label error.
 
 ![form-label-error](assets/img/form-label-error.png)
 
@@ -38,4 +38,4 @@ Next, we will add an `id` to the `Select` component using `inputProps`. The `id`
 {% endraw %}
 ```
 
-Reload the "Settings" page in your browser and re-run the Wave tool. The missing form label error should now be fixed.
+Reload the "Settings" page in your browser and re-run the WAVE tool. The missing form label error should now be fixed.

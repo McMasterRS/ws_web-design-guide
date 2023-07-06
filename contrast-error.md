@@ -7,7 +7,7 @@ nav_order: 2
 
 # Contrast Error
 
-Navigate to the main index page and run the Wave tool. You will notice that the tool identifies a contrast error on this page. 
+Navigate to the main index page and run the WAVE tool. You will notice that the tool identifies a contrast error on this page. 
 
 ![contrast-error](assets/img/contrast-error.png)
 
@@ -37,10 +37,10 @@ Modify the `MuiFileInput` component by adding an `sx` prop as shown below:
 
 We used the `sx` prop to modify the color of the `placeholder` text depending on which theme mode (light/dark) is currently active. Note that we had to use the `important` CSS rule to modify the placeholder text color. Using the `important` CSS rule is often not required for standard MUI components, but it is required in this case because the `MuiFileInput` component is a third-party library that comes with some default styles that cannot be overridden without the  `important` CSS rule. 
 
-Reload the main page in your browser and re-run the Wave tool. The contrast error should now be fixed.
+Reload the main page in your browser and re-run the WAVE tool. The contrast error should now be fixed.
 
 ![contrast-error-fixed](assets/img/contrast-error-fixed.png)
 
 Switch to dark mode and verify that the contrast error is not present using this mode. 
 
-Shrink your browser window and re-run the Wave tool to verify that the mobile version of this page does not have any errors on it. 
+Shrink your browser window and re-run the WAVE tool to verify that the mobile version of this page does not have any errors on it. 
