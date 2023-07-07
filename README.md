@@ -1,6 +1,6 @@
-# Design Guidelines for McMaster Websites
+# Building Modern JavaScript Websites
 
-Materials for the McMaster Research Software workshop: **Design Guidelines for McMaster Websites**  
+Materials for the McMaster Research Software workshop: **Building Modern JavaScript Websites**  
 
 This repository contains workshop files, as well as files used to create the [workshop webpage](https://mcmasterrs.github.io/ws_web-design-guide/) with GitHub Pages.  
 
