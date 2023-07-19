@@ -10,19 +10,13 @@ nav_order: 2
 We now learn how to use custom fonts and typography styles in a web application. McMaster recommends the use of the Roboto family of fonts on all websites associated with the university, so we will import and use these fonts as an example. 
 To add the Roboto family of fonts to your SPA follow the steps below:
 
-## Add the `@next/font` package
-Install the `@next/font` package using the following command:
-```
-npm i @next/font
-```
-
 ## Create `theme.ts`
 In the root directory of your project, create a new directory named `config`. You can create the folder using the command line (`mkdir config`) or the GUI.
 Navigate to the newly created `config` directory, and create a new file called `theme.ts` in this directory.
 
 Add the following code snippet to  `theme.ts`:
 ```
-import {Roboto, Roboto_Condensed} from "@next/font/google";
+import {Roboto, Roboto_Condensed} from "next/font/google";
 
 const roboto = Roboto({
     weight: ['300', '700'],
@@ -78,7 +72,7 @@ const themeOptions = {
 export default themeOptions
 ```
 
-In this code snippet, we start by importing the Roboto font variants that we need using the `@next/font/google` package. We then define the different typography variants that can be used in our application. The heading styles conform to the McMaster Digital Brand Standards. The `button` and `settingTitle` typographies define the font style to use for text located in buttons and setting titles respectively. We will cover styling buttons and the "Settings" page in later sections of this workshop.
+In this code snippet, we start by importing the Roboto font variants that we need using the `next/font/google` package. We then define the different typography variants that can be used in our application. The heading styles conform to the McMaster Digital Brand Standards. The `button` and `settingTitle` typographies define the font style to use for text located in buttons and setting titles respectively. We will cover styling buttons and the "Settings" page in later sections of this workshop.
 
 ## Create a Theme Provider
 Open the `template.tsx` file located in the `app` directory and add the following import statements:
