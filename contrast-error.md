@@ -7,13 +7,13 @@ nav_order: 2
 
 # Contrast Error
 
-Navigate to the main index page and run the WAVE tool. You will notice that the tool identifies a contrast error on this page. 
+Navigate to the main page and run the WAVE tool. You will notice that the tool identifies a contrast error on this page. 
 
 ![contrast-error](assets/img/contrast-error.png)
 
-The contrast error is caused by the shade of grey used for the placeholder text on the file input widget that appears on the main index page of our website. To fix the error, we will modify the file input widget to use a slightly darker shade of grey in light mode that is AODA compliant for the placeholder text. Dark mode uses a light grey color for the placeholder text to maintain visibility against a dark background.
+The contrast error is caused by the shade of grey used for the placeholder text on the file input widget that appears on the main page of our website. To fix the error, we will modify the file input widget to use a slightly darker shade of grey in light mode that is AODA compliant for the placeholder text. Dark mode uses a light grey color for the placeholder text to maintain visibility against a dark background.
 
-Open the `pages/index.tsx` file and add the following import statement:
+Open the `app/page.tsx` file and add the following import statement:
 ```
 import {useTheme} from '@mui/material/styles'
 ```

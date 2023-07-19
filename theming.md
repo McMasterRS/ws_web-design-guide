@@ -82,7 +82,7 @@ const themeOptions = {
 export default themeOptions
 ```
 
-Save this file and go back to your browser. Your SPA will be automatically updated to use the Heritage Maroon color in lieu of the default MUI blue color. The buttons and the file picker on the main index page will now have rounder corners as well:
+Save this file and go back to your browser. Your SPA will be automatically updated to use the Heritage Maroon color in lieu of the default MUI blue color. The buttons and the file picker on the main page will now have rounder corners as well:
 
 ![color-index](assets/img/color-index.png)
 

@@ -25,14 +25,14 @@ palette: {
 ```
 
 
-## Modify `_app.tsx`
-Open `pages/_app.tsx` and add the following import statements:
+## Modify `app/template.tsx`
+Open `app/template.tsx` and add the following import statements:
 ```
 import React from 'react'
 import useMediaQuery from '@mui/material/useMediaQuery'
 ```
 
-Create and export the `ColorModeContext` constant, which will allow us to read and modify the theme mode of our website from the navigation bar. The following code should be added before the `App` function declaration:
+Create and export the `ColorModeContext` constant, which will allow us to read and modify the theme mode of our website from the navigation bar. The following code should be added before the `Template` function declaration:
 ```
 export const ColorModeContext = React.createContext({
     toggleColorMode: () => {},
@@ -113,27 +113,28 @@ return <>
             <ThemeProvider theme={theme}>
               <Navbar />
               <CssBaseline />
-              <Component {...pageProps} />
+              {children}
           </ThemeProvider>
         </ColorModeContext.Provider>
     </>
 ```
-Your `_app.tsx` file should now look like this:
+Your `app/template.tsx` file should now look like this:
 ```
-import type { AppProps } from 'next/app'
-import CssBaseline from '@mui/material/CssBaseline'
+'use client';
+
 import Navbar from "@/components/Navbar/Navbar";
+import CssBaseline from "@mui/material/CssBaseline";
 import Footer from "@/components/Footer/Footer";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import React from "react";
 import {createTheme, ThemeProvider} from '@mui/material/styles'
-import themeOptions from '@/config/theme'
-import React from 'react'
-import useMediaQuery from '@mui/material/useMediaQuery'
+import themeOptions from "@/config/theme";
 
 export const ColorModeContext = React.createContext({
     toggleColorMode: () => {},
 })
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function Template({children}: {children?: React.ReactNode} ) {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
     const [themeMode, setThemeMode] = React.useState<'light' | 'dark' | null>(null)
@@ -184,17 +185,19 @@ export default function App({ Component, pageProps }: AppProps) {
         [theme]
     )
 
-    return <>
-        <ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
-                <Navbar />
-                <CssBaseline />
-                <Component {...pageProps} />
-                <Footer />
-            </ThemeProvider>
-        </ColorModeContext.Provider>
+    return (
+        <>
+            <ColorModeContext.Provider value={colorMode}>
+                <ThemeProvider theme={theme}>
+                    <Navbar />
+                    <CssBaseline />
+                    {children}
+                    <Footer />
+                </ThemeProvider>
+            </ColorModeContext.Provider>
 
-    </>
+        </>
+    )
 }
 ```
 
@@ -202,10 +205,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
 Open the `components/Navbar/Navbar.tsx` file and add the following import statement:
 ```
-import {ColorModeContext} from '@/pages/_app'
+import {ColorModeContext} from "@/app/template";
 ```
 
-Next, we will use the `useContext` hook to grab the current context value of the `ColorModeContext` imported from `pages/_app.tsx`.
+Next, we will use the `useContext` hook to grab the current context value of the `ColorModeContext` imported from `app/template.tsx`.
 
 Add the following line after the `theme` constant declaration in the `Navbar` function:
 ```

@@ -63,9 +63,9 @@ You will now have an `wsr_web-design-guide` repo on your local machine.
 cd wsr_web-design-guide
 ~~~
 
-2. Checkout the `mac-branding` branch using the following command:
+2. Checkout the `styling` branch using the following command:
 ```
-git checkout mac-branding
+git checkout styling
 ```
 Alternatively, you can switch branches using your IDE's GUI:
 ![checkout-vsc](assets/img/checkout-vsc.png)

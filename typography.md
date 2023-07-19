@@ -10,38 +10,10 @@ nav_order: 2
 We now learn how to use custom fonts and typography styles in a web application. McMaster recommends the use of the Roboto family of fonts on all websites associated with the university, so we will import and use these fonts as an example. 
 To add the Roboto family of fonts to your SPA follow the steps below:
 
-## Define the Typography Styles
-Open the `_document.tsx` file located in the `pages` directory and modify line 6 as follows by deleting `<Head />` and replacing it with:
+## Add the `@next/font` package
+Install the `@next/font` package using the following command:
 ```
-<Head >  
-	<link  
-	rel="stylesheet"  
-	href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i|Roboto+Condensed:400,400i,700,700i|&display=swap"  
-	/>  
-</Head>
-```
-This line of code downloads the needed Roboto font variants from Google Fonts.
-
-The `_document.tsx` file should now contain the following code:
-```
-import { Html, Head, Main, NextScript } from 'next/document'  
-  
-export default function Document() {  
-	return (  
-		<Html lang="en">  
-			<Head >  
-				<link  
-					rel="stylesheet"  
-					href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i|Roboto+Condensed:400,400i,700,700i|&display=swap"  
-				/>  
-			</Head>  
-			<body>  
-				<Main />  
-				<NextScript />  
-			</body>  
-		</Html>  
-	)  
-}
+npm i @next/font
 ```
 
 ## Create `theme.ts`
@@ -50,6 +22,22 @@ Navigate to the newly created `config` directory, and create a new file called `
 
 Add the following code snippet to  `theme.ts`:
 ```
+import {Roboto, Roboto_Condensed} from "@next/font/google";
+
+const roboto = Roboto({
+    weight: ['300', '700'],
+    style: ['normal', 'italic'],
+    subsets: ['latin'],
+    display: 'swap',
+})
+
+const roboto_condensed = Roboto_Condensed({
+    weight: ['400', '700'],
+    style: ['normal', 'italic'],
+    subsets: ['latin'],
+    display: 'swap',
+})
+
 declare module '@mui/material/Typography' {
     interface TypographyPropsVariantOverrides {
         settingTitle: true;
@@ -58,42 +46,42 @@ declare module '@mui/material/Typography' {
 
 const themeOptions = {
     typography: {
-        h1: {
-            fontFamily: 'Roboto Condensed',
+		h1: {
+            fontFamily: roboto_condensed.style.fontFamily,
             fontSize: '50pt',
         },
         h2: {
-            fontFamily: 'Roboto Condensed',
+            fontFamily: roboto_condensed.style.fontFamily,
             fontSize: '28pt',
             fontWeight: 400,
         },
         h3: {
-            fontFamily: 'Roboto Condensed',
+            fontFamily: roboto_condensed.style.fontFamily,
             fontSize: '20pt',
         },
         h4: {
-            fontFamily: 'Roboto',
+            fontFamily: roboto.style.fontFamily,
             fontSize: '13pt',
             fontWeight: 900,
         },
         button: {
-            fontFamily: 'Roboto Condensed',
+            fontFamily: roboto_condensed.style.fontFamily,
             fontWeight: 700,
         },
-        settingTitle: {  
-			fontFamily: 'Roboto Condensed',  
-			fontSize: '15pt',  
-		},
+        settingTitle: {
+            fontFamily: roboto_condensed.style.fontFamily,
+            fontSize: '15pt',
+        },
     },
 }
 
 export default themeOptions
 ```
 
-In this code snippet, we are defining the different typography variants that can be used in our application. The heading styles conform to the McMaster Digital Brand Standards. The `button` and `settingTitle` typographies define the font style to use for text located in buttons and setting titles respectively. We will cover styling buttons and the "Settings" page in later sections of this workshop.
+In this code snippet, we start by importing the Roboto font variants that we need using the `@next/font/google` package. We then define the different typography variants that can be used in our application. The heading styles conform to the McMaster Digital Brand Standards. The `button` and `settingTitle` typographies define the font style to use for text located in buttons and setting titles respectively. We will cover styling buttons and the "Settings" page in later sections of this workshop.
 
 ## Create a Theme Provider
-Open the `_app.tsx_` file located in the `pages` directory and add the following import statements:
+Open the `template.tsx` file located in the `app` directory and add the following import statements:
 ```
 import {createTheme, ThemeProvider} from '@mui/material/styles'  
 import themeOptions from '@/config/theme'
@@ -113,41 +101,37 @@ return <>
 	<ThemeProvider theme={theme}>
 		<Navbar />
 		<CssBaseline />
-		<Component {...pageProps} />
+		{children}
 		<Footer />
 	</ThemeProvider>
 </>
 ```
 Your `_app.tsx` file should now look like this:
 ```
-import type { AppProps } from 'next/app'
-import CssBaseline from '@mui/material/CssBaseline'
+'use client';
+
 import Navbar from "@/components/Navbar/Navbar";
+import CssBaseline from "@mui/material/CssBaseline";
 import Footer from "@/components/Footer/Footer";
-import {createTheme, ThemeProvider} from '@mui/material/styles'
+import {createTheme, ThemeProvider} from '@mui/material/styles'  
 import themeOptions from '@/config/theme'
 
-export default function App({ Component, pageProps }: AppProps) {
-    const theme = createTheme({
-        ...themeOptions
-    });
-
-    return <>
-        <ThemeProvider theme={theme}>
-            <Navbar />
-            <CssBaseline />
-            <Component {...pageProps} />
-            <Footer />
-        </ThemeProvider>
-    </>
+export default function Template({children}: {children?: React.ReactNode} ) {
+    return (
+	    <ThemeProvider theme={theme}>
+			<Navbar />
+			<CssBaseline />
+			{children}
+			<Footer />
+		</ThemeProvider>
+    )
 }
-
 ```
 
 ## Use the Typography Component
 
-### Update `pages/index.tsx`
-Open the `pages/index.tsx` file and add the following import statement to import the MUI Typography component:
+### Update `app/page.tsx`
+Open the `app/page.tsx` file and add the following import statement to import the MUI Typography component:
 ```
 import Typography from '@mui/material/Typography'
 ```
@@ -161,10 +145,10 @@ Save the file and go back the browser, your webpage should now look like this:
 
 Notice the following changes:
 - The "Hello World!" text now uses the `h1` style defined in `theme.ts`.
-- Buttons on the index page as well as in the navigation bar now use the `button` typography style defined in `theme.ts`.
+- Buttons on the main page as well as in the navigation bar now use the `button` typography style defined in `theme.ts`.
 
-### Update `page_1/index.tsx`
-Open the `pages/page_1/index.tsx` file and import the MUI Typography component:
+### Update `page_1/page.tsx`
+Open the `app/page_1/page.tsx` file and import the MUI Typography component:
 ```
 import Typography from '@mui/material/Typography'
 ```
@@ -179,7 +163,7 @@ Using `h1` tag            |  Using `Typogrpahy` component (`h1` variant)
 :-------------------------:|:-------------------------:
 ![old-page-1](assets/img/old-page-1.png)  |  ![new-page-1](assets/img/new-page-1.png)
 
-### Update `page_2/index.tsx`
+### Update `page_2/page.tsx`
 Repeat the process above for "Page 2".
 Add the following import statement:
 ```
@@ -190,7 +174,7 @@ Delete the line containing the `<h1>` tag inside the `Box` component and replace
 <Typography variant="h1">Page 2</Typography>
 ```
 
-### Update `support/index.tsx`
+### Update `support/page.tsx`
 Add the following import statement:
 ```
 import Typography from '@mui/material/Typography'
@@ -200,7 +184,7 @@ Delete the line containing the `<h1>` tag inside the `Box` component and replace
 <Typography variant="h1">Help and Support</Typography>
 ```
 
-### Update `settings/index.tsx`
+### Update `settings/page.tsx`
 
 ![old-settings](assets/img/old-settings.png)
 

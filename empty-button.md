@@ -37,7 +37,7 @@ Shrink your browser window to trigger the mobile version of "Page 1" and run the
 
 While we can use a title message to resolve this issue like we did for the back button, we will show another way of addressing the problem.
 
-Open the `pages/page_1/index.tsx` file and add the following import statement:
+Open the `app/page_1/page.tsx` file and add the following import statement:
 ```
 import Tooltip from "@mui/material/Tooltip";
 ```

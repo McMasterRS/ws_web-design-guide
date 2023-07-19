@@ -33,10 +33,10 @@ export const MacButton = styled(MuiButton, {shouldForwardProp: (prop) => prop !=
 }));
 ```
 
-### Update the Buttons on the Main Index Page
+### Update the Buttons on the Main Page
 We will now update the buttons on the main index page to use the newly created `MacButton` component instead of the standard MUI `Button` component. 
 
-Open the `pages/index.tsx` file and replace the `Button` import statement with following import statement:
+Open the `app/page.tsx` file and replace the `Button` import statement with following import statement:
 ```
 import {MacButton} from '@/components/MacComponents/MacButton'
 ```
@@ -91,7 +91,7 @@ Save the file and navigate to "Page 1" in your browser. Try hovering over the ba
 ## Buttons With a Dropdown Menu
 The styled `MacButton` that we created earlier can be combined with a dropdown menu to create a button that allows the user to execute mutually exclusive functions that fall under the same category e.g., a download button that lets the user choose the file format. Our SPA already has a regular MUI `Button` with a dropdown menu on "Page 1". We will update the button to use the the `secondary` variant of the `MacButton` component.
 
-Open `page_1/index.tsx` and replace the `Button` import statement with following import statement:
+Open `page_1/page.tsx` and replace the `Button` import statement with following import statement:
 ```
 import {MacButton} from '@/components/MacComponents/MacButton'
 ```
@@ -162,7 +162,7 @@ export const MacSpeedDial = styled(SpeedDial, {shouldForwardProp: (prop) => prop
 
 We added a `mainColor` prop to the `MacSpeedDial` component that will determine the background color, text/icon color and hover color of the button. Akin to the `MacButton` component, if the `mainColor` prop is `'primary'`, then the background color will be Heritage Maroon, the text/icon color will be white and the speed dial will turn a medium shade of grey when the user hovers over it as required by the McMaster Digital Brand Standards guide. Otherwise, if the `mainColor` prop is `'secondary'`, then the background color will be Heritage Gold, the text/icon color will be dark grey and the button will turn light grey when the user hovers the mouse over it.
 
-We will now use the `MacSpeedDial` component on "Page 2". Open the `pages/page_2/index.tsx` file and add the following import statement:
+We will now use the `MacSpeedDial` component on "Page 2". Open the `app/page_2/page.tsx` file and add the following import statement:
 ```
 import {MacSpeedDial} from '@/components/MacComponents/MacSpeedDial'  
 ```

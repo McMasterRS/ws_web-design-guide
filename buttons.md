@@ -13,7 +13,7 @@ Navigate to "Page 1" and try shrinking your browser window. The "Download" butto
 
 To fix this issue, we will make the "Download" button smaller by removing the text.
 
-Open the `pages/page_1/index.tsx` file and add the following import statement:
+Open the `app/page_1/page.tsx` file and add the following import statement:
 ```
 import useMediaQuery from '@mui/material/useMediaQuery';
 ```
