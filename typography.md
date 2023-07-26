@@ -7,7 +7,7 @@ nav_order: 2
 
 # Typography
 
-We now learn how to use custom fonts and typography styles in a web application. McMaster recommends the use of the Roboto family of fonts on all websites associated with the university, so we will import and use these fonts as an example. 
+We will now learn how to use custom fonts and typography styles in a web application. McMaster recommends the use of the Roboto family of fonts on all websites associated with the university, so we will import and use these fonts as an example. 
 To add the Roboto family of fonts to your SPA follow the steps below:
 
 ## Create `theme.ts`
@@ -81,7 +81,7 @@ import {createTheme, ThemeProvider} from '@mui/material/styles'
 import themeOptions from '@/config/theme'
 ```
 
-Create the `theme` constant in the `App` function (before the `return` statement):
+Create the `theme` constant in the `Template` function (before the `return` statement):
 ```
 const theme = createTheme({  
 ...themeOptions  
