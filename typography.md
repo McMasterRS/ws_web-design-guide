@@ -100,7 +100,7 @@ Add the `return` statement as shown below:
 return (
 	 <ThemeProvider theme={theme}>
 		 {children}
-     </ThemeProvider>
+	 </ThemeProvider>
 )
 ```
 
@@ -133,7 +133,7 @@ import {Provider} from "@/components/Provider/Provider";
 ```
 
 Update the return statement by wrapping the `children` with `Provider` as shown below:
-```
+```ts
 return (
         <html lang="en">
         <body>
@@ -148,7 +148,7 @@ return (
 
 ### Update `app/page.tsx`
 Open the `app/page.tsx` file and add the following import statement to import the MUI Typography component:
-```
+```ts
 import Typography from '@mui/material/Typography'
 ```
 Delete the line containing the `<h1>` tag inside the `Stack` component and replace it with the following line of code:
