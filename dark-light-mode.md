@@ -60,13 +60,13 @@ const primary_color = themeMode == null
             ? '#7a003c'
             : '#ed89a3';
 
-    const secondary_color = themeMode == null
-        ? prefersDarkMode
-            ? '#fdd287'
-            : '#fdbf57'
-        : themeMode == 'light'
-            ? '#fdbf57'
-            : '#fdd287';
+const secondary_color = themeMode == null
+	? prefersDarkMode
+		? '#fdd287'
+		: '#fdbf57'
+	: themeMode == 'light'
+		? '#fdbf57'
+		: '#fdd287';
             
 const theme = React.useMemo(
         () =>
