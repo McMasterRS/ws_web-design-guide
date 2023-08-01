@@ -25,6 +25,14 @@ palette: {
 ```
 
 
+## Determine Desaturated Theme Colors
+We will use the [MUI Color Palette Tool](https://m2.material.io/inline-tools/color/) to determine the desaturated variant of our theme colors.
+
+![color-palettes](assets/img/color-palettes.png)
+
+Colors in the `[200,50]` range can be used in dark mode.
+For our theme, the desaturated primary color is `#ed89a3`, and the desaturated secondary color is `#fdd287`.
+
 ## Update the `Provider` Component
 We will need to update the custom theme provider component to handle switching the theme in our SPA.
 
@@ -97,6 +105,7 @@ This updated declaration utilizes the React `useMemo` hook to create and cache t
 When using dark mode, the primary and secondary colors of our theme are desaturated to retain readability and enhance contrast. The values of these colors are now determined programmatically as shown in the diagrams below:
 ![logic-mode](assets/img/logic-primary.png)
 ![logic-mode](assets/img/logic-secondary.png)
+
 
 We will now make use of the React `useMemo` hook to calculate and cache the value of the `colorMode` constant. Add the following lines of code **after** the `theme` declaration:
 ```ts
