@@ -14,14 +14,14 @@ Navigate to the "Settings" page by clicking on the gear icon and evaluate the pa
 This error is caused by the dropdown menu component (i.e., the `Select` component) not having an `id` that matches that of its corresponding `InputLabel`. To fix this issue, simply open the `components/TabPanel/VerticalTabs.tsx` file and locate the `InputLabel` and `Select` components.
 
 Add an `htmlFor` prop to the `InputLabel` component as shown below:
-```
+```ts
 <InputLabel id="demo-simple-select-label" htmlFor="demo-simple-select">
 	Demo Dropdown Menu
 </InputLabel>
 ```
 
 Next, we will add an `id` to the `Select` component using `inputProps`. The `id` of the `Select` component has to match the one entered in the `htmlFor` field of the `InputLabel`:
-```
+```ts
 {% raw %}
 <Select
 	labelId="demo-simple-select-label"

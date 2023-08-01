@@ -16,7 +16,7 @@ Open the `components/Navbar/Navbar.tsx` file and replace all the existing `displ
 
 ## Add a Drawer
 Start by adding the following import statements to `Navbar.tsx`:
-```
+```ts
 import Drawer from "@mui/material/Drawer";  
 import List from "@mui/material/List";  
 import ClearIcon from '@mui/icons-material/Clear';  
@@ -30,7 +30,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 ```
 
 Next, add the following lines of code before the `return` statement:
-```
+```ts
 {% raw %}
 const [state, setState] = React.useState(false);
 
@@ -103,7 +103,7 @@ The `toggleDrawer` function handles opening and closing the drawer using the `st
 We will now add the UI elements that should only be visible on smaller screens. We will add a `MacIconNavButton` to open and close the drawer. We will also use a smaller version of the McMaster logo that only contains the emblem. 
 
 Add the following lines of code right after the `Toolbar` opening tag inside the `return` statement:
-```
+```ts
 {% raw %}
 <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
 	<Tooltip enterDelay={500} title={state ? "Close App Drawer" : "Open App Drawer"}>

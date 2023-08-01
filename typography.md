@@ -15,7 +15,7 @@ In the root directory of your project, create a new directory named `config`. Yo
 Navigate to the newly created `config` directory, and create a new file called `theme.ts` in this directory.
 
 Add the following code snippet to  `theme.ts`:
-```
+```ts
 import {Roboto, Roboto_Condensed} from "next/font/google";
 
 const roboto = Roboto({
@@ -74,54 +74,76 @@ export default themeOptions
 
 In this code snippet, we start by importing the Roboto font variants that we need using the `next/font/google` package. We then define the different typography variants that can be used in our application. The heading styles conform to the McMaster Digital Brand Standards. The `button` and `settingTitle` typographies define the font style to use for text located in buttons and setting titles respectively. We will cover styling buttons and the "Settings" page in later sections of this workshop.
 
-## Create a Theme Provider
-Open the `template.tsx` file located in the `app` directory and add the following import statements:
-```
+## Create a Theme Provider Component
+We will need to create a custom theme provider component to handle creating a theme with custom typography.
+
+Create a `Provider` directory under the `components` directory. Create a `Provider.tsx` file inside the `Provider` directory and add the following statements to it:
+```ts
+`use client`;
+
 import {createTheme, ThemeProvider} from '@mui/material/styles'  
 import themeOptions from '@/config/theme'
 ```
 
-Create the `theme` constant in the `Template` function (before the `return` statement):
-```
-const theme = createTheme({  
-...themeOptions  
-});
+Create the `Provider` function:
+```ts
+export function Provider({ children } : {children: React.ReactNode}) {
+	const theme = createTheme({  
+	...themeOptions  
+	});
+}
 ```
 Notice that the theme uses the `themeOptions` defined in and imported from `theme.ts`.
 
-Update the return statement by wrapping its content with a `ThemeProvider` as shown below:
+Add the `return` statement as shown below:
+```ts
+return (
+	 <ThemeProvider theme={theme}>
+		 {children}
+     </ThemeProvider>
+)
 ```
-return <>
-	<ThemeProvider theme={theme}>
-		<Navbar />
-		<CssBaseline />
-		{children}
-		<Footer />
-	</ThemeProvider>
-</>
-```
-Your `_app.tsx` file should now look like this:
-```
+
+Your `Provider.tsx` file should now look like this:
+```ts
 'use client';
 
-import Navbar from "@/components/Navbar/Navbar";
-import CssBaseline from "@mui/material/CssBaseline";
-import Footer from "@/components/Footer/Footer";
-import {createTheme, ThemeProvider} from '@mui/material/styles'  
-import themeOptions from '@/config/theme'
+import React from "react";
+import {createTheme, ThemeProvider} from '@mui/material/styles'
+import themeOptions from "@/config/theme";
 
-export default function Template({children}: {children?: React.ReactNode} ) {
+
+export function Provider({ children } : {children: React.ReactNode}) {
+    const theme = createTheme({
+        ...themeOptions
+    });
+
     return (
-	    <ThemeProvider theme={theme}>
-			<Navbar />
-			<CssBaseline />
-			{children}
-			<Footer />
-		</ThemeProvider>
+        <ThemeProvider theme={theme}>
+            {children}
+        </ThemeProvider>
     )
 }
 ```
 
+## Update `layout.tsx`
+Open the `layout.tsx` file located in the `app` directory and add the following import statement:
+```ts
+import {Provider} from "@/components/Provider/Provider";
+```
+
+Update the return statement by wrapping the `children` with `Provider` as shown below:
+```
+return (
+        <html lang="en">
+        <body>
+        <Provider>
+            {children}
+        </Provider>
+        </body>
+        </html>
+    )
+```
 ## Use the Typography Component
 
 ### Update `app/page.tsx`
@@ -130,7 +152,7 @@ Open the `app/page.tsx` file and add the following import statement to import th
 import Typography from '@mui/material/Typography'
 ```
 Delete the line containing the `<h1>` tag inside the `Stack` component and replace it with the following line of code:
-```
+```ts
 <Typography variant="h1">Hello World!</Typography>
 ```
 
@@ -143,11 +165,11 @@ Notice the following changes:
 
 ### Update `page_1/page.tsx`
 Open the `app/page_1/page.tsx` file and import the MUI Typography component:
-```
+```ts
 import Typography from '@mui/material/Typography'
 ```
 Delete the line containing the `<h1>` tag inside the `Box` component and replace it with the following line of code:
-```
+```ts
 <Typography variant="h1">Page 1</Typography>
 ```
 
@@ -160,21 +182,21 @@ Using `h1` tag            |  Using `Typogrpahy` component (`h1` variant)
 ### Update `page_2/page.tsx`
 Repeat the process above for "Page 2".
 Add the following import statement:
-```
+```ts
 import Typography from '@mui/material/Typography'
 ```
 Delete the line containing the `<h1>` tag inside the `Box` component and replace it with the following line of code:
-```
+```ts
 <Typography variant="h1">Page 2</Typography>
 ```
 
 ### Update `support/page.tsx`
 Add the following import statement:
-```
+```ts
 import Typography from '@mui/material/Typography'
 ```
 Delete the line containing the `<h1>` tag inside the `Box` component and replace it with the following line of code:
-```
+```ts
 <Typography variant="h1">Help and Support</Typography>
 ```
 
@@ -183,11 +205,11 @@ Delete the line containing the `<h1>` tag inside the `Box` component and replace
 ![old-settings](assets/img/old-settings.png)
 
 Add the following import statement:
-```
+```ts
 import Typography from '@mui/material/Typography'
 ```
 Delete the line containing the `<h2>` tag after the `Breadcrumbs` component and replace it with the following line of code:
-```
+```ts
 {% raw %}
 <Typography
 	sx={{display: 'flex', justifyContent: 'center'}}

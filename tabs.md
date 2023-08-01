@@ -16,7 +16,7 @@ Open the `components/TabPanel/VerticalTabs.tsx` file and replace the `display: '
 
 ## Add Drawer
 Start by adding the following import statements to `VerticalTabs.tsx`:
-```
+```ts
 import Drawer from '@mui/material/Drawer';  
 import List from '@mui/material/List';  
 import ListItem from '@mui/material/ListItem';  
@@ -28,7 +28,7 @@ import IconButton from "@mui/material/IconButton";
 ```
 
 Next, add the following lines of code before the `return` statement:
-```
+```ts
 {% raw %}
 const handleChangeDrawer = (e: React.MouseEvent<HTMLDivElement>, newValue: number) => {
 	setValue(newValue);
@@ -78,7 +78,7 @@ The `toggleDrawer` function handles opening and closing the drawer using the `st
 We will now add the UI elements that should only be visible on smaller screens. We will add an `IconButton` to open and close the `Drawer` component.
 
 Add the following lines of code right after the `Tabs` closing tag inside the `return` statement:
-```
+```ts
 {% raw %}
 <Box sx={{paddingTop: '19px'}}>
 	<IconButton title="Settings Drawer" aria-label="settings-menu" onClick={toggleDrawer(true)} sx={{ display: {xs: 'inline', md: 'none'}, height:'40px'}}> <FormatListBulletedOutlinedIcon /> </IconButton>
@@ -111,7 +111,7 @@ Add the following lines of code right after the `Tabs` closing tag inside the `r
 We will also add a title to each panel that is only visible on small screens since the tab names are no longer visible when the user is on each tab.
 
 Modify each `TabPanel` component by adding a `Typography` component to it and only displaying it on small screen using breakpoints:
-```
+```ts
 {% raw %}
 <TabPanel value={value} index={0}>
 	<Typography

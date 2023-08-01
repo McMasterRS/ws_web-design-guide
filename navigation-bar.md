@@ -16,7 +16,7 @@ In the `styles` directory of your project, create a new file called `Navbar.modu
 
 Add the following lines to `Navbar.module.css`:
 
-```
+```css
 /* Specific styles for non-active navbar links */
 .nonActive {
     color: white;
@@ -32,10 +32,6 @@ Add the following lines to `Navbar.module.css`:
     color: #7a003c;
     background: white;
 }
-
-.title:hover {
-    color: #fdbf57;
-}
 ```
 
 ## Create Styled Buttons and Icon Buttons
@@ -43,7 +39,7 @@ We will now created styled buttons and icon buttons for use in our navigation ba
 
 Create a new directory called `MacComponents` inside the `components` directory. Create a new file in this directory called `MacNavButton.tsx` and add the following code to it:
 
-```
+```ts
 import {styled, useTheme} from '@mui/material/styles'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
@@ -73,13 +69,13 @@ We set the hover color to Heritage Fold and made the background transparent when
 
 ## Update `Navbar.tsx`
 Open the `components/Navbar/Navbar.tsx` file and add the following import statements:
-```
+```ts
 import styles from '@/styles/NavBar.module.css'  
 import {MacIconNavButton, MacNavButton,} from '@/components/MacComponents/MacNavButton'
 ```
 
 Next, we will add the McMaster logo to the left-hand side of the navigation bar. Add the following lines of code before the `Typography` component containing the "MacApp" string:
-```
+```ts
 {% raw %}
 <Box
 	component="img"
@@ -100,7 +96,7 @@ Your navigation bar will now look like this:
 ![logo-navbar](assets/img/logo-navbar.png)
 
 Update the `Typography` component containing the "MacApp" string by changing the variant from `h3` to `h5` and adding the following prop `className={styles.title}` after the `sx` prop. The typography component should now look like this:
-```
+```ts
 {% raw %}
 <Typography
 	variant="h3"
@@ -112,8 +108,10 @@ Update the `Typography` component containing the "MacApp" string by changing the
 		display: 'flex',
 		textDecoration: 'none',
 		color: 'inherit',
+		"&:hover": {
+			color: useTheme().palette.secondary.main
+		}
 	}}
-	className={styles.title}
 >
 	MacApp
 </Typography>
@@ -132,7 +130,7 @@ Try hovering over the "MacApp" title in your browser, the text should turn Herit
 We will now update the page links in the navigation to change color when the user hovers over them and have an active indicator. 
 Inspect the `Box` component after the the `Typography` component containing the "MacApp" string. Notice that the page links are rendered using the standard MUI `Button` component.
 We will modify the page links to use the custom `MacNavButton` component that we created earlier instead of the standard MUI `Button` component as shown in the code snippet below:
-```
+```ts
 {% raw %}
 <Box sx={{flexGrow: 1, display: 'flex'}}>
 	{pages.map(page => (
@@ -160,7 +158,7 @@ We also conditionally set the `className` prop to display a white oval-shaped ba
 Similarly, we will update the icon buttons in the navigation bar to use the aforementioned hover and active styles.
 
 Locate the `IconButton` component containing the  `<Brightness4Icon />` and `<Brightness4Icon />` components and change it to a `MacIconNavButton` component as show below:
-```
+```ts
 {% raw %}
 <MacIconNavButton
 	sx={{ml: 1}}
@@ -172,11 +170,11 @@ Locate the `IconButton` component containing the  `<Brightness4Icon />` and `<Br
 		<Brightness4Icon />
 	)}
 </MacIconNavButton>
-{% endraw %}s
+{% endraw %}
 ```
 
 Next, change the `IconButton` component containing the `<SettingsIcon />` component to a `MacIconNavButton` controller and add the `classNames` prop:
-```
+```ts
 <MacIconNavButton
 	aria-label="settings"
 	color="inherit"

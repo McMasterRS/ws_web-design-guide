@@ -15,7 +15,7 @@ Modern websites require the use of UI elements that not only allow the user to p
 We will start by creating a styled `MacButton` component based on the standard `MuiButton` button. We will add a `mainColor` prop to the `MacButton` component that will determine the background color, text color and hover color of the button. If the `mainColor` prop is `'primary'`, then the background color will be Heritage Maroon, the text color will be white and the button will turn a medium shade of grey when the user hovers over it as required by the McMaster Digital Brand Standards guide. On the other hand, if the `mainColor` prop is `'secondary'`, then the background color will be Heritage Gold, the text color will be dark grey and the button will turn light grey when the user hovers the mouse over it.
 
 Create a `MacButton.tsx` file in the `components/MacComponents` directory and add the following lines of code to it:
-```
+```ts
 import {useTheme} from '@mui/material/styles'
 import styled from '@emotion/styled'
 import MuiButton, {ButtonProps} from '@mui/material/Button'
@@ -37,12 +37,12 @@ export const MacButton = styled(MuiButton, {shouldForwardProp: (prop) => prop !=
 We will now update the buttons on the main index page to use the newly created `MacButton` component instead of the standard MUI `Button` component. 
 
 Open the `app/page.tsx` file and replace the `Button` import statement with following import statement:
-```
+```ts
 import {MacButton} from '@/components/MacComponents/MacButton'
 ```
 
 Locate the two `Button` components and modify them as shown below:
-```
+```ts
 <MacButton 
 	variant="contained" 
 	mainColor="primary" 
@@ -74,12 +74,12 @@ Hovering Over Primary Button            |  Hovering Over Secondary Button
 
 ### Update the Back Button on the `BreadCrumbs` component
 Open the `components/BreadCrumbs/BreadCrumbs.tsx` file and replace the `Button` import statement with following import statement:
-```
+```ts
 import {MacButton} from '@/components/MacComponents/MacButton'
 ```
 
 Locate the  `Button` component and modify it as shown below:
-```
+```ts
 <MacButton variant="contained" mainColor="primary" onClick={() => router.back()}>
 	<ArrowBackIcon />
 </MacButton>
@@ -92,12 +92,12 @@ Save the file and navigate to "Page 1" in your browser. Try hovering over the ba
 The styled `MacButton` that we created earlier can be combined with a dropdown menu to create a button that allows the user to execute mutually exclusive functions that fall under the same category e.g., a download button that lets the user choose the file format. Our SPA already has a regular MUI `Button` with a dropdown menu on "Page 1". We will update the button to use the the `secondary` variant of the `MacButton` component.
 
 Open `page_1/page.tsx` and replace the `Button` import statement with following import statement:
-```
+```ts
 import {MacButton} from '@/components/MacComponents/MacButton'
 ```
 
  Locate the "Download" `Button` component and change it to use the  `MacButton` component as shown below:
-```
+```ts
 {% raw %}
 <MacButton
 	id="download-button"
@@ -133,7 +133,7 @@ The styled download button will look like this:
 Material UI offers a `SpeedDial` component that allows developers to create a floating action button, which can display related actions. The `SpeedDial` component is often used to group action that manipulate the state of an object e.g., "edit", "delete", and "save". We will now learn how to create a styled `SpeedDial` component that adheres to the McMaster Branding Standards.
 
 Create a `MacSpeedDial.tsx` file in the `components/MacComponents` directory and add the following lines of code to it:
-```
+```ts
 import {useTheme} from '@mui/material/styles'
 import styled from '@emotion/styled'
 import SpeedDial, {SpeedDialProps} from '@mui/material/SpeedDial'
@@ -163,14 +163,14 @@ export const MacSpeedDial = styled(SpeedDial, {shouldForwardProp: (prop) => prop
 We added a `mainColor` prop to the `MacSpeedDial` component that will determine the background color, text/icon color and hover color of the button. Akin to the `MacButton` component, if the `mainColor` prop is `'primary'`, then the background color will be Heritage Maroon, the text/icon color will be white and the speed dial will turn a medium shade of grey when the user hovers over it as required by the McMaster Digital Brand Standards guide. Otherwise, if the `mainColor` prop is `'secondary'`, then the background color will be Heritage Gold, the text/icon color will be dark grey and the button will turn light grey when the user hovers the mouse over it.
 
 We will now use the `MacSpeedDial` component on "Page 2". Open the `app/page_2/page.tsx` file and add the following import statement:
-```
+```ts
 import {MacSpeedDial} from '@/components/MacComponents/MacSpeedDial'  
 ```
 
 You can remove `SpeedDial` from the following import statement `import {SpeedDial, SpeedDialAction, SpeedDialIcon} from "@mui/material";`
 
 Replace the `SpeedDial` component with a `MacSpeedDial` component and add the `mainColor` prop as shown below:
-```
+```ts
 {% raw %}
 <MacSpeedDial
 	ariaLabel="Demo SpeedDial"
@@ -206,7 +206,7 @@ Save the file and navigate to "Page 2" in your browser. The Speed Dial will now 
 Dropdown menus allow the user to select an option from a given list. Material UI provides a `Select` component that can be used to generate dropdown menus. The "Settings" page of our SPA already has a dropdown menu with rounded corners (due to the `shape` property set in `theme.ts`). However, the list of options that appears when you click on the dropdown menu has rounded corners that could potentially clip text. We will need to reduce the border radius of the  `MuiPaper` component to address this concern.
 
 Open `config/theme.ts` and add the following lines of code after the `shape` definition (make sure there is a comma after the `shape` definition):
-```
+```ts
 components: {
 	MuiPaper: {
 		styleOverrides: {

@@ -13,7 +13,7 @@ Material UI streamlines the theming process by allowing developers to define the
 Start by defining the primary and secondary colors of your theme. The McMaster Digital Brand Standards specify that the primary color should be McMaster Heritage Maroon and the secondary color is McMaster Heritage Gold.
 
 Modify `theme.ts` by adding the following code at the beginning of the `themeOptions` object:
-```
+```ts
 palette: {  
 	primary: {  
 		main: "#7a003c"  
@@ -34,7 +34,7 @@ shape: {
 Note that the shape `borderRadius` sets the global value of the border radius for all MUI components, we will modify the border radius of individual components as needed in future sections of this workshop.
 
 Your `theme.ts` file should now look like this:
-```
+```ts
 declare module '@mui/material/Typography' {
     interface TypographyPropsVariantOverrides {
         settingTitle: true;

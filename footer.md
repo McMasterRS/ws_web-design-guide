@@ -14,12 +14,12 @@ Open the `components/Footer/Footer.tsx` file and locate the `Paper` component in
 Notice that the `position` prop is set to `fixed` , which is why the footer is always visible at the bottom of the page. We will modify this prop to be set conditionally depending on the screen size using the MUI breakpoints API. 
 
 Add the following import statement to `Footer.tsx`:
-```
+```ts
 import {useTheme} from "@mui/material/styles";
 ```
 
 Delete the `position: 'fixed'` line and replace it with the following lines of code:
-```
+```ts
 [useTheme().breakpoints.between('xs', 'md')]: {
 	position: 'relative',
 },
@@ -31,7 +31,7 @@ We set the footer `position` to `relative` on screen size between small (inclusi
 
 ## Modify the Footer Height
 Similarly, we will need to reduce the height of the footer on small screens by adding the following lines of code inside the `sx` prop:
-```
+```ts
 [useTheme().breakpoints.between('xs', 'md')]: {  
 	height: '93',  
 },
@@ -44,7 +44,7 @@ The copyright information and the links are not positioned properly on small scr
 
 Replace the `display: 'flex'` line inside the `sx` prop of the `Box` and the first two `Grid` components with `display: {xs: 'none', md: 'flex'}` as shown below:
 
-```
+```ts
 {% raw %}
 <Box
 	sx={{
@@ -68,12 +68,12 @@ Replace the `display: 'flex'` line inside the `sx` prop of the `Box` and the fir
 ```
 
 Add the following import statement to `Footer.tsx`:
-```
+```ts
 import Stack from "@mui/material/Stack";
 ```
 
 Add the following lines of code to before the closing `</Container>` tag:
-```
+```ts
 {% raw %}
 <Stack
 	direction="column"

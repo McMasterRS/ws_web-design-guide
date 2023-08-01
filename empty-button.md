@@ -20,7 +20,7 @@ Pull the website's HTML code by clicking on the turquoise "Code" button at the b
 After inspecting the code, we found that the empty button is the "Back" button that appears next to the breadcrumbs. To fix this error, we will add a `title` prop to the `MacButton` component used to render the "Back" button.
 
 Open the `components/BreadCrumbs/BreadCrumbs.tsx` file and locate the `MacButton` component containing an `ArrowBackIcon`. Add a `title` prop to the `MacButton` component:
-```
+```ts
 <MacButton variant="contained" mainColor="primary" onClick={() => router.back()} title={"Back"}>
     <ArrowBackIcon />
 </MacButton>
@@ -38,12 +38,12 @@ Shrink your browser window to trigger the mobile version of "Page 1" and run the
 While we can use a title message to resolve this issue like we did for the back button, we will show another way of addressing the problem.
 
 Open the `app/page_1/page.tsx` file and add the following import statement:
-```
+```ts
 import Tooltip from "@mui/material/Tooltip";
 ```
 
 Locate the `MacButton` "Download" component and wrap it in a `Tooltip` component as shown below:
-```
+```ts
 {% raw %}
  <Tooltip title={useMediaQuery(useTheme().breakpoints.down('md')) ? 'Download' : ''} >
 	<MacButton

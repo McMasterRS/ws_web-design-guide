@@ -14,18 +14,18 @@ Navigate to "Page 1" and try shrinking your browser window. The "Download" butto
 To fix this issue, we will make the "Download" button smaller by removing the text.
 
 Open the `app/page_1/page.tsx` file and add the following import statement:
-```
+```ts
 import useMediaQuery from '@mui/material/useMediaQuery';
 ```
 
 
 Replace the `import {alpha, styled} from '@mui/material/styles';`  import statement with:
-```
+```ts
 import {alpha, styled, useTheme} from '@mui/material/styles';
 ```
 
 Locate the "Download" `MacButton` component and replace the `Download` string inside of it with the following line of code :
-```
+```ts
 {useMediaQuery(useTheme().breakpoints.up('md')) ? 'Download' : ''}
 ```
 

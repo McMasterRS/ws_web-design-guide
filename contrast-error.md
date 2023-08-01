@@ -14,11 +14,11 @@ Navigate to the main page and run the WAVE tool. You will notice that the tool i
 The contrast error is caused by the shade of grey used for the placeholder text on the file input widget that appears on the main page of our website. To fix the error, we will modify the file input widget to use a slightly darker shade of grey in light mode that is AODA compliant for the placeholder text. Dark mode uses a light grey color for the placeholder text to maintain visibility against a dark background.
 
 Open the `app/page.tsx` file and add the following import statement:
-```
+```ts
 import {useTheme} from '@mui/material/styles'
 ```
 Modify the `MuiFileInput` component by adding an `sx` prop as shown below:
-```
+```ts
 {% raw %}
 <MuiFileInput  
 	multiple  
