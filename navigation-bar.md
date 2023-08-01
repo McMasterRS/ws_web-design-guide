@@ -157,7 +157,7 @@ We also conditionally set the `className` prop to display a white oval-shaped ba
 
 Similarly, we will update the icon buttons in the navigation bar to use the aforementioned hover and active styles.
 
-Locate the `IconButton` component containing the  `<Brightness4Icon />` and `<Brightness4Icon />` components and change it to a `MacIconNavButton` component as show below:
+Locate the `IconButton` component containing the  `<Brightness7Icon />` and `<Brightness4Icon />` components and change it to a `MacIconNavButton` component as show below:
 ```ts
 {% raw %}
 <MacIconNavButton
