@@ -19,14 +19,7 @@ Add the following code snippet to  `theme.ts`:
 import {Roboto, Roboto_Condensed} from "next/font/google";
 
 const roboto = Roboto({
-    weight: ['300', '700'],
-    style: ['normal', 'italic'],
-    subsets: ['latin'],
-    display: 'swap',
-})
-
-const roboto = Roboto({
-    weight: ['300', '900'],
+    weight: ['400', '900'],
     style: ['normal', 'italic'],
     subsets: ['latin'],
     display: 'swap',
