@@ -95,7 +95,7 @@ Your navigation bar will now look like this:
 
 ![logo-navbar](assets/img/logo-navbar.png)
 
-Update the `Typography` component containing the "MacApp" string by changing the variant from `h3` to `h5` and adding the following prop `className={styles.title}` after the `sx` prop. The typography component should now look like this:
+Update the `Typography` component containing the "MacApp" string by changing the variant from `h3` to `h5` and defining the `hover` behavior inside the `sx` prop. The typography component should now look like this:
 ```ts
 {% raw %}
 <Typography
@@ -122,7 +122,6 @@ Old "MacApp" Title           |  Styled "MacApp" Title
 :-------------------------:|:-------------------------:
 ![old-macapp](assets/img/old-macapp.png)  |  ![styled-macapp](assets/img/styled-macapp.png)
 
-We used the `classNames` prop to indicate that the "MacApp" `Typography` component should use the `title` CSS style defined in `Navbar.module.css`. 
 Try hovering over the "MacApp" title in your browser, the text should turn Heritage Gold to indicate that it is a clickable link as shown in the image below.
 
 ![hover-macapp](assets/img/hover-macapp.png)

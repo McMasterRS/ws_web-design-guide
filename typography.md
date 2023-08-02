@@ -81,6 +81,7 @@ Create a `Provider` directory under the `components` directory. Create a `Provid
 ```ts
 `use client`;
 
+import React from "react";
 import {createTheme, ThemeProvider} from '@mui/material/styles'  
 import themeOptions from '@/config/theme'
 ```
