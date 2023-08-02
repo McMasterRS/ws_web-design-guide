@@ -36,9 +36,8 @@ For our theme, the desaturated primary color is `#ed89a3`, and the desaturated s
 ## Update the `Provider` Component
 We will need to update the custom theme provider component to handle switching the theme in our SPA.
 
-Open the `Provider/Provider.tsx` file  inside the `components` directory. Add the following import statements to it:
+Open the `Provider/Provider.tsx` file  inside the `components` directory. Add the following import statement to it:
 ```ts
-import React from 'react'
 import useMediaQuery from '@mui/material/useMediaQuery'
 ```
 
