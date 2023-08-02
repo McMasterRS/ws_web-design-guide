@@ -32,6 +32,12 @@ const roboto_condensed = Roboto_Condensed({
     display: 'swap',
 })
 
+declare module '@mui/material/Typography' {
+    interface TypographyPropsVariantOverrides {
+        settingTitle: true;
+    }
+}
+
 const themeOptions = {
     typography: {
         h1: {
@@ -75,7 +81,7 @@ We will need to create a custom theme provider component to handle creating a th
 
 Create a `Provider` directory under the `components` directory. Create a `Provider.tsx` file inside the `Provider` directory and add the following statements to it:
 ```ts
-`use client`;
+'use client';
 
 import React from "react";
 import {createTheme, ThemeProvider} from '@mui/material/styles'  
