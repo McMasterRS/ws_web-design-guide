@@ -25,6 +25,13 @@ const roboto = Roboto({
     display: 'swap',
 })
 
+const roboto = Roboto({
+    weight: ['300', '900'],
+    style: ['normal', 'italic'],
+    subsets: ['latin'],
+    display: 'swap',
+})
+
 const roboto_condensed = Roboto_Condensed({
     weight: ['400', '700'],
     style: ['normal', 'italic'],
@@ -32,17 +39,12 @@ const roboto_condensed = Roboto_Condensed({
     display: 'swap',
 })
 
-declare module '@mui/material/Typography' {
-    interface TypographyPropsVariantOverrides {
-        settingTitle: true;
-    }
-}
-
 const themeOptions = {
     typography: {
-		h1: {
+        h1: {
             fontFamily: roboto_condensed.style.fontFamily,
             fontSize: '50pt',
+            fontWeight: 400,
         },
         h2: {
             fontFamily: roboto_condensed.style.fontFamily,
@@ -52,6 +54,7 @@ const themeOptions = {
         h3: {
             fontFamily: roboto_condensed.style.fontFamily,
             fontSize: '20pt',
+            fontWeight: 400,
         },
         h4: {
             fontFamily: roboto.style.fontFamily,
