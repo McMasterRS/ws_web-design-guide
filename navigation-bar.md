@@ -46,7 +46,7 @@ import IconButton from '@mui/material/IconButton'
 
 export const MacNavButton = styled(Button)(props => ({
     ':hover': {
-        backgroundColor: '',
+        backgroundColor: "transparent",
         color: useTheme().palette.secondary.main,
     },
     '&& .MuiTouchRipple-child': {

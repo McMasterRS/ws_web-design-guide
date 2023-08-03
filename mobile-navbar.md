@@ -162,8 +162,10 @@ Add the following lines of code right after the `Toolbar` opening tag inside the
 				flexGrow: 1,
 				color: 'inherit',
 				textDecoration: 'none',
+				"&:hover": {
+					color: useTheme().palette.secondary.main
+				}
 			}}
-			className={styles.title}
 >
 			MacApp
 		</Typography>
