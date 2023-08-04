@@ -7,7 +7,7 @@ nav_order: 1
 
 # Update the Favicon
 
-Changing the default favicon of a Next.js application is one of the first things you can do when branding your website.
+A Favicon is an icon that appear on the tab for a page next to the page’s title. Favicons help boost visibility in the user's browser and help strengthen the website's brand identity. Changing the default favicon of a Next.js application is one of the first things you can do when branding your website.
 
 The demo app includes two favicons: the default Next.js one (`public/favicon2.ico`) and the McMaster favicon (`public/favicon.ico`), which was downloaded from the [McMaster University Brand Standards Website Favicon Folder](https://brand-resources.mcmaster.ca/asset-bank/action/browseItems?categoryId=1516&categoryTypeId=2&cachedCriteria=1).
 

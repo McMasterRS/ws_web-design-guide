@@ -128,7 +128,7 @@ export function Provider({ children } : {children: React.ReactNode}) {
     )
 }
 ```
-
+Notice that the theme uses the `themeOptions` defined in and imported from `theme.ts`.
 ## Update `layout.tsx`
 Open the `layout.tsx` file located in the `app` directory and add the following import statement:
 ```ts
