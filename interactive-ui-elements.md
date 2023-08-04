@@ -29,6 +29,8 @@ export const MacButton = styled(MuiButton, {shouldForwardProp: (prop) => prop !=
     color: props.mainColor === 'secondary' ? '#262626':  '',
     ':hover': {
         backgroundColor: props.mainColor === 'secondary' ? '#DBDBDD':'#5E6A71',
+		color: useTheme().palette.mode === 'dark' ? (props.mainColor === 'primary' ? '#FFFFFF' : '') : '',
+
     },
 }));
 ```

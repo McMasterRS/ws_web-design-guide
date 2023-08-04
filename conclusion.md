@@ -19,6 +19,7 @@ Throughout this workshop, we learned the basics of styling Material UI component
 - A styled dropdown menu
 - Vertical tabs that make use of a drawer on mobile devices
 - AODA compliance
+- Accessible focus indicators
 
 While we only scratched the surface of what you can do with Next.js and Material UI, we hope that this workshop provided you with the basic knowledge needed to style your McMaster website. 
 

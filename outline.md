@@ -17,6 +17,7 @@ At the end of this workshop, attendees will be able to:
 - Style common interactive UI elements like buttons, speed dials and file input widgets
 - Modify web application components to scale properly on small screen devices
 - Evaluate your website for AODA compliance using the WAVE tool and fix common accessibility errors
+- Design and implement accessible focus indicators for common MUI components
 
 ## Table of Content
 
@@ -41,4 +42,5 @@ At the end of this workshop, attendees will be able to:
 	2. [Contrast Error](contrast-error.md)
 	3. [Empty Button Error](empty-button.md)
 	4. [Missing Form Label](form-label.md)
+	5. [Focus Indicators](focus-indicators.md)
 5. [Conclusion](conclusion.md)
