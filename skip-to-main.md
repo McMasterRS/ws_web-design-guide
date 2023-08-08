@@ -4,7 +4,7 @@ title: "Skip to Main Content" Button
 parent: AODA Compliance
 nav_order: 6
 ---
-# "Skip to Main Content" Button
+# Skip to Main Content Button
 
 Many modern websites have a consistent set of UI elements at top of every page. The content commonly includes a header with the brand logo and a navigation bar. If a user navigates the same site regularly, they will probably find themselves navigating through these UI elements regularly to get to the main content on the page, which can be tedious and detrimental to the overall user experience. As such, developers started adding a "Skip to Main Content" button to their webpages. These anchor buttons are meant to be used as the first element that a user can tab to when they first load a webpage. In this section, we will learn how to add a "Skip to Main Content" button to our Next.js application.
 
