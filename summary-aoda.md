@@ -2,7 +2,7 @@
 layout: default
 title: Summary
 parent: AODA Compliance
-nav_order: 6
+nav_order: 7
 ---
 
 In the third and last part of this workshop, we learned how to ensure our Next.js SPA is AODA compliant using the WAVE tool. We also added accessible focus indicators to a number of MUI components and we added a "Skip to Main Content" button to our navigation bar. We now know how to:
