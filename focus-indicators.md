@@ -12,7 +12,7 @@ Accounting for keyboard users is an imperative step towards ensuring that all us
 According to the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-minimum), a focus indicator should satisfy the following requirements:
 - The focus indicator should the visual presentation of the user interface component;
 - The focus indicator should have a contrast ratio of at least 3:1 between its pixels in the focused and unfocused states;
-- The focus indicator should have a contrast ratio of at least 3:1 against adjacent colors or is no thinner than 2px.
+- The focus indicator should have a contrast ratio of at least 3:1 against adjacent colors **or** should not be thinner than 2px.
 
 By default, MUI uses a pulsing ripple effect when tabbing through UI elements. The pulsing ripple does not meet the accessibility requirements. In this section of the workshop, we will learn how to style the focus indicator of a number of MUI components to ensure that it meets the requirements outlined by the WCAG.
 
