@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Accessible Focus Indicator
+title: Accessible Focus Indicators
 parent: AODA Compliance
 nav_order: 5
 ---
@@ -225,6 +225,7 @@ const theme = React.useMemo(
 We added a focus indicator that uses the primary color of our theme to the `MuiButtonBase` component.
 
 Save the file and then try to tab through the options in the "Download" button dropdown menu on "Page 1":
+
 ![focus-dropdown](assets/img/focus-dropdown.png)
 
 If your website uses additional MUI components that were not covered, it is important to ensure that all of them have accessible focus indicators that mimic the ones shown in this workshop.
