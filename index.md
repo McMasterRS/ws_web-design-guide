@@ -14,7 +14,7 @@ In this beginner workshop, we will take a deep dive into the process of designin
 This workshop uses the Next.js framework in conjunction with the Material UI (MUI) library. If you are using a different tech stack or framework that the ones in this workshop, please feel free to book a consultation with the Research Software Development team by emailing [rsd@mcmaster.ca](mailto:rsd@mcmaster.ca). No previous experience with Next.js or MUI is required. Familiarity with TypeScript and React will be helpful but is not necessary.
 
 ## Prerequisites
-- **Git**: Git should be installed on your local machine to clone the workshop web application repository. Please consult the following [guide](https://github.com/git-guides/install-git) if you need help installing git on your machine.
-- **IDE (Integrated Development Environment)**: You will need to have an IDE installed on your computer to easily modify the workshop web application files. We recommend using [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/).
-- **Node.js**: We will be using Node.js in this workshop. Please consult the [Pre-workshop Material](pre-workshop) section if you need help installing Node.js on your machine. 
+- **Git**: We will be using Git to clone a repository from GitHub. Git should be installed on your local machine to clone the workshop web application repository. Please consult the following [guide](https://github.com/git-guides/install-git) if you need help installing git on your machine.
+- **IDE (Integrated Development Environment)**: You will need to have an IDE installed on your computer to easily modify the workshop web application code and files. We recommend using [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/).
+- **Node.js**: We will be using Node.js in this workshop to install packages and run the web application locally on our machine. Please consult the [Pre-workshop Material](pre-workshop) section if you need help installing Node.js on your machine. 
 
