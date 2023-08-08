@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Accesible Focus Indicator
+title: Accessible Focus Indicator
 parent: AODA Compliance
 nav_order: 5
 ---
