@@ -4,6 +4,7 @@ title: Summary
 parent: Mobile UI
 nav_order: 5
 ---
+# Summary
 
 In the second part of this workshop, we learned how to optimize a Next.js SPA for mobile devices by scaling its components to fit properly on small screens. Our mobile-friendly SPA includes:
 - An adaptive footer that changes its layout and position according to the display size
