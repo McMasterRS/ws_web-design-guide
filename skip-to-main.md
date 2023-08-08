@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Skip to Main Content" Button
+title: Skip to Main Content Button
 parent: AODA Compliance
 nav_order: 6
 ---
