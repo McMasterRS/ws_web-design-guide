@@ -28,6 +28,7 @@ Add the following lines to `Navbar.module.css`:
     background: white;
 }
 
+/* Specific styles when hover over active navbar links */
 .active:hover {
     color: #7a003c;
     background: white;
@@ -40,28 +41,36 @@ We will now created styled buttons and icon buttons for use in our navigation ba
 Create a new directory called `MacComponents` inside the `components` directory. Create a new file in this directory called `MacNavButton.tsx` and add the following code to it:
 
 ```ts
-import {styled, useTheme} from '@mui/material/styles'
-import Button from '@mui/material/Button'
-import IconButton from '@mui/material/IconButton'
-
-export const MacNavButton = styled(Button)(props => ({
-    ':hover': {
-        backgroundColor: "transparent",
-        color: useTheme().palette.secondary.main,
-    },
-    '&& .MuiTouchRipple-child': {
-        backgroundColor: "#D6D6D6",
-    },
-})) as typeof Button
-
-export const MacIconNavButton = styled(IconButton)(props => ({
-    ':hover': {
-        backgroundColor: "transparent",
-        color: useTheme().palette.secondary.main,
-    },
-    '&& .MuiTouchRipple-child': {
-        backgroundColor: "#D6D6D6",
-    },
+import {styled, useTheme} from '@mui/material/styles'  
+import Button from '@mui/material/Button'  
+import IconButton from '@mui/material/IconButton'  
+  
+export const MacNavButton = styled(Button)(props => ({  
+    // setting the navigation button behavior when hovering over them  
+    ':hover': {  
+        // the background should be transparent when hovering over a navigation button  
+        backgroundColor: "transparent",  
+        // the text should be heritage gold (the secondary color in the theme)  
+        color: useTheme().palette.secondary.main,  
+    },  
+    // changing the color of the ripple and setting to a light grey  
+    '&& .MuiTouchRipple-child': {  
+        backgroundColor: "#D6D6D6",  
+    },  
+})) as typeof Button  
+  
+export const MacIconNavButton = styled(IconButton)(props => ({  
+    // setting the navigation icon button behavior when hovering over them  
+    ':hover': {  
+        // the background should be transparent when hovering over a navigation icon button  
+        backgroundColor: "transparent",  
+        // the icon should be heritage gold (the secondary color in the theme)  
+        color: useTheme().palette.secondary.main,  
+    },  
+    '&& .MuiTouchRipple-child': {  
+        // changing the color of the ripple and setting to a light grey  
+        backgroundColor: "#D6D6D6",  
+    },  
 })) as typeof IconButton
 ```
 
@@ -108,6 +117,7 @@ Update the `Typography` component containing the "MacApp" string by changing the
 		display: 'flex',
 		textDecoration: 'none',
 		color: 'inherit',
+		// changing the color of the text to heritage gold when hovering over it
 		"&:hover": {
 			color: useTheme().palette.secondary.main
 		}
@@ -138,6 +148,8 @@ We will modify the page links to use the custom `MacNavButton` component that we
 			component={Link}
 			href={page[1]}
 			sx={{my: 2, color: 'white', display: 'block'}}
+			// if the current route equals the URL associated with the button,  
+			// then use the active style. Otherwise, use the inactive style
 			className={
 				currentRoute === page[1]
 					? styles.active
@@ -180,6 +192,8 @@ Next, change the `IconButton` component containing the `<SettingsIcon />` compon
 	component={Link}
 	href="/settings"
 	className={
+		// if the current route equals '/settings',  
+		// then use the active style. Otherwise, use the inactive style
 		currentRoute === '/settings'
 			? styles.active
 			: styles.nonActive

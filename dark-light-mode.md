@@ -43,6 +43,8 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
 Create and export the `ColorModeContext` constant, which will allow us to read and modify the theme mode of our website from the navigation bar. The following code should be added before the `Provider` function declaration:
 ```ts
+// exporting the ColorModeContext containing the skeleton of the function used to change
+// the current color mode
 export const ColorModeContext = React.createContext({
     toggleColorMode: () => {},
 })
@@ -52,13 +54,17 @@ Next, we will determine if the user currently has dark mode enabled on their sys
 
 Add the following lines of the code at the top of the `Provider` function:
 ```ts
+// checking if the user has dark mode enabled on their system
 const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
+// declaring the themeMode constant and the setTheMode function  
+// themeMode can be "light", "dark" or null and is initialized to null
 const [themeMode, setThemeMode] = React.useState<'light' | 'dark' | null>(null)
 ```
 
 Define the primary and secondary colors and replace the `const theme` declaration with the following updated declaration:
 ```ts
+// setting the primary color hex code depending on the themeMode
 const primary_color = themeMode == null
         ? prefersDarkMode
             ? '#ed89a3'
@@ -67,6 +73,7 @@ const primary_color = themeMode == null
             ? '#7a003c'
             : '#ed89a3';
 
+// setting the secondary color hex code depending on the themeMode
 const secondary_color = themeMode == null
 	? prefersDarkMode
 		? '#fdd287'
@@ -74,7 +81,8 @@ const secondary_color = themeMode == null
 	: themeMode == 'light'
 		? '#fdbf57'
 		: '#fdd287';
-            
+
+// creating a theme using the themeOptions imported from theme.ts
 const theme = React.useMemo(
         () =>
             createTheme({
@@ -94,7 +102,7 @@ const theme = React.useMemo(
                     },
                 },
             }),
-        [themeMode, prefersDarkMode]
+        [themeMode, prefersDarkMode, primary_color, secondary_color]
     )
 ```
 This updated declaration utilizes the React `useMemo` hook to create and cache the theme value. The value of the `mode` attribute is determined by examining the the value of the `themeMode` constant we created earlier. The diagram below explains the conditional logic used to determine the value of `mode`:
@@ -108,6 +116,9 @@ When using dark mode, the primary and secondary colors of our theme are desatura
 
 We will now make use of the React `useMemo` hook to calculate and cache the value of the `colorMode` constant. Add the following lines of code **after** the `theme` declaration:
 ```ts
+// the toggleColorMode function changes the themeMode depending on its current value
+// if the current themeMode is light, it will change it to dark
+// if the current themeMode is dark, it will change it to light
 const colorMode = React.useMemo(
 	() => ({
 		toggleColorMode: () => {
@@ -120,6 +131,9 @@ const colorMode = React.useMemo(
 
 Finally, wrap the returned elements of the `Provider` function with the `ColorModeContext.Provider`:
 ```ts
+// we use the ColorModeContext.Provider to pass the current colorMode to all the component below it  
+// we use the ThemeProvider to pass the current theme to all the component below it  
+// any component can read the colorMode and theme, no matter how deep it is
 return (
 	<ColorModeContext.Provider value={colorMode}>
 		<ThemeProvider theme={theme}>
@@ -130,90 +144,105 @@ return (
 ```
 Your `Provider/Provider.tsx` file should now look like this:
 ```ts
-'use client';
-
-import useMediaQuery from "@mui/material/useMediaQuery";
-import React from "react";
-import {createTheme, ThemeProvider} from '@mui/material/styles'
-import themeOptions from "@/config/theme";
-
-export const ColorModeContext = React.createContext({
-    toggleColorMode: () => {},
-})
-
-export function Provider({ children } : {children: React.ReactNode}) {
-    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-
-    const [themeMode, setThemeMode] = React.useState<'light' | 'dark' | null>(null)
-
-    const primary_color = themeMode == null
-        ? prefersDarkMode
-            ? '#ed89a3'
-            : '#7a003c'
-        : themeMode == 'light'
-            ? '#7a003c'
-            : '#ed89a3';
-
-    const secondary_color = themeMode == null
-        ? prefersDarkMode
-            ? '#fdd287'
-            : '#fdbf57'
-        : themeMode == 'light'
-            ? '#fdbf57'
-            : '#fdd287';
-            
-	const theme = React.useMemo(
-        () =>
-            createTheme({
-                ...themeOptions,
-                palette: {
-                    mode:
-                        themeMode == null
-                            ? prefersDarkMode
-                                ? 'dark'
-                                : 'light'
-                            : themeMode,
-                    primary: {
-                        main: primary_color
-                    },
-                    secondary: {
-                        main: secondary_color
-                    },
-                },
-            }),
-        [themeMode, prefersDarkMode]
-    )
-
-    const colorMode = React.useMemo(
-        () => ({
-            toggleColorMode: () => {
-                setThemeMode(prevMode => (prevMode == null ? (theme.palette.mode === 'dark' ? 'light' : 'dark') : prevMode === 'light' ? 'dark' : 'light'))
-            },
-        }),
-        [theme]
-    )
-
-    return (
-        <ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
-                {children}
-            </ThemeProvider>
-        </ColorModeContext.Provider>
-    )
+'use client';  
+  
+import useMediaQuery from "@mui/material/useMediaQuery";  
+import React from "react";  
+import {createTheme, ThemeProvider} from '@mui/material/styles'  
+import themeOptions from "@/config/theme";  
+  
+// exporting the ColorModeContext containing the skeleton of the function used to change  
+// the current color mode  
+export const ColorModeContext = React.createContext({  
+    toggleColorMode: () => {},  
+})  
+  
+export function Provider({ children } : {children: React.ReactNode}) {  
+    // checking if the user has dark mode enabled on their system  
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')  
+  
+    // declaring the themeMode constant and the setTheMode function  
+    // themeMode can be "light", "dark" or null and is initialized to null    
+    const [themeMode, setThemeMode] = React.useState<'light' | 'dark' | null>(null)  
+  
+    // setting the primary color hex code depending on the themeMode  
+    const primary_color = themeMode == null  
+        ? prefersDarkMode  
+            ? '#ed89a3'  
+            : '#7a003c'  
+        : themeMode == 'light'  
+            ? '#7a003c'  
+            : '#ed89a3';  
+  
+    // setting the secondary color hex code depending on the themeMode  
+    const secondary_color = themeMode == null  
+        ? prefersDarkMode  
+            ? '#fdd287'  
+            : '#fdbf57'  
+        : themeMode == 'light'  
+            ? '#fdbf57'  
+            : '#fdd287';  
+  
+    // creating a theme using the themeOptions imported from theme.ts  
+    const theme = React.useMemo(  
+        () =>  
+            createTheme({  
+                ...themeOptions,  
+                palette: {  
+                    mode:  
+                        themeMode == null  
+                            ? prefersDarkMode  
+                                ? 'dark'  
+                                : 'light'  
+                            : themeMode,  
+                    primary: {  
+                        main: primary_color  
+                    },  
+                    secondary: {  
+                        main: secondary_color  
+                    },  
+                },  
+            }),  
+        [themeMode, prefersDarkMode, primary_color, secondary_color]  
+    )  
+  
+    // the toggleColorMode function changes the themeMode depending on its current value  
+    // if the current themeMode is light, it will change it to dark    
+    // if the current themeMode is dark, it will change it to light    
+    const colorMode = React.useMemo(  
+        () => ({  
+            toggleColorMode: () => {  
+                setThemeMode(prevMode => (prevMode == null ? (theme.palette.mode === 'dark' ? 'light' : 'dark') : prevMode === 'light' ? 'dark' : 'light'))  
+            },  
+        }),  
+        [theme]  
+    )  
+  
+	// we use the ColorModeContext.Provider to pass the current colorMode to all the component below it  
+	// we use the ThemeProvider to pass the current theme to all the component below it 
+	// any component can read the colorMode and theme, no matter how deep it is
+    return (  
+        <ColorModeContext.Provider value={colorMode}>  
+            <ThemeProvider theme={theme}>  
+                {children}  
+            </ThemeProvider>  
+        </ColorModeContext.Provider>  
+    )  
 }
 ```
 
 ## Update `Navbar.tsx`
 
 Open the `components/Navbar/Navbar.tsx` file and add the following import statement:
-```
+```ts
 import {ColorModeContext} from "@/components/Provider/Provider";
 ```
 
 Next, we will use the `useContext` hook to grab the current context value of the `ColorModeContext` imported from `components/Provider/Provider.tsx`.
 
 Add the following line after the `theme` constant declaration in the `Navbar` function:
-```
+```ts
+// reading the value of the ColorModeContext imported from Provider
 const colorMode = React.useContext(ColorModeContext)
 ```
 

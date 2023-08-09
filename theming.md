@@ -26,7 +26,8 @@ palette: {
 In this code snippet, we are defining the primary and secondary colors of our website using the hex values that correspond to the McMaster Heritage Maroon and Heritage Gold colors.
 
 Next, we will set the border radius in the theme to 28 inside `themeOptions`:
-```
+```ts
+// setting the global border radius for all components
 shape: {  
 	borderRadius: 28,  
 },
@@ -35,50 +36,70 @@ Note that the shape `borderRadius` sets the global value of the border radius fo
 
 Your `theme.ts` file should now look like this:
 ```ts
-declare module '@mui/material/Typography' {
-    interface TypographyPropsVariantOverrides {
-        settingTitle: true;
-    }
-}
-
-const themeOptions = {
-	palette: {  
-		primary: {  
-			main: "#7a003c"  
-		},  
-		secondary: {  
-			main: "#fdbf57"  
-		}  
-	},
-    typography: {
-        h1: {
-            fontFamily: 'Roboto Condensed',
-            fontSize: '50pt',
-        },
-        h2: {
-            fontFamily: 'Roboto Condensed',
-            fontSize: '28pt',
-            fontWeight: 400,
-        },
-        h3: {
-            fontFamily: 'Roboto Condensed',
-            fontSize: '20pt',
-        },
-        h4: {
-            fontFamily: 'Roboto',
-            fontSize: '13pt',
-            fontWeight: 900,
-        },
-        button: {
-            fontFamily: 'Roboto Condensed',
-            fontWeight: 700,
-        },
-    },
+// importing the Roboto and Roboto Condensed fonts from Google Fonts  
+import {Roboto, Roboto_Condensed} from "next/font/google";  
+  
+// specifying the weights and styles of the Roboto font  
+const roboto = Roboto({  
+    weight: ['400', '900'],  
+    style: ['normal', 'italic'],  
+    subsets: ['latin'],  
+    display: 'swap',  
+})  
+  
+// specifying the weights and styles of the Roboto Condensed font  
+const roboto_condensed = Roboto_Condensed({  
+    weight: ['400', '700'],  
+    style: ['normal', 'italic'],  
+    subsets: ['latin'],  
+    display: 'swap',  
+})  
+  
+// declaring a custom typography variant  
+declare module '@mui/material/Typography' {  
+    interface TypographyPropsVariantOverrides {  
+        settingTitle: true;  
+    }  
+}  
+  
+const themeOptions = {  
+    // setting the typography variants  
+    typography: {  
+        h1: {  
+            fontFamily: roboto_condensed.style.fontFamily,  
+            fontSize: '50pt',  
+            fontWeight: 400,  
+        },  
+        h2: {  
+            fontFamily: roboto_condensed.style.fontFamily,  
+            fontSize: '28pt',  
+            fontWeight: 400,  
+        },  
+        h3: {  
+            fontFamily: roboto_condensed.style.fontFamily,  
+            fontSize: '20pt',  
+            fontWeight: 400,  
+        },  
+        h4: {  
+            fontFamily: roboto.style.fontFamily,  
+            fontSize: '13pt',  
+            fontWeight: 900,  
+        },  
+        button: {  
+            fontFamily: roboto_condensed.style.fontFamily,  
+            fontWeight: 700,  
+        },  
+        settingTitle: {  
+            fontFamily: roboto_condensed.style.fontFamily,  
+            fontSize: '15pt',  
+        },  
+    },  
+    // setting the global border radius for all components  
     shape: {  
-		borderRadius: 28,  
-	},
-}
-
+        borderRadius: 28,  
+    },  
+}  
+  
 export default themeOptions
 ```
 

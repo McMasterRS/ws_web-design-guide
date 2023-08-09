@@ -16,29 +16,34 @@ Navigate to the newly created `config` directory, and create a new file called `
 
 Add the following code snippet to  `theme.ts`:
 ```ts
-import {Roboto, Roboto_Condensed} from "next/font/google";
-
-const roboto = Roboto({
-    weight: ['400', '900'],
-    style: ['normal', 'italic'],
-    subsets: ['latin'],
-    display: 'swap',
-})
-
-const roboto_condensed = Roboto_Condensed({
-    weight: ['400', '700'],
-    style: ['normal', 'italic'],
-    subsets: ['latin'],
-    display: 'swap',
-})
-
-declare module '@mui/material/Typography' {
-    interface TypographyPropsVariantOverrides {
-        settingTitle: true;
-    }
+// importing the Roboto and Roboto Condensed fonts from Google Fonts  
+import {Roboto, Roboto_Condensed} from "next/font/google";  
+  
+// specifying the weights and styles of the Roboto font  
+const roboto = Roboto({  
+    weight: ['400', '900'],  
+    style: ['normal', 'italic'],  
+    subsets: ['latin'],  
+    display: 'swap',  
+})  
+  
+// specifying the weights and styles of the Roboto Condensed font  
+const roboto_condensed = Roboto_Condensed({  
+    weight: ['400', '700'],  
+    style: ['normal', 'italic'],  
+    subsets: ['latin'],  
+    display: 'swap',  
+})  
+  
+// declaring a custom typography variant  
+declare module '@mui/material/Typography' {  
+    interface TypographyPropsVariantOverrides {  
+        settingTitle: true;  
+    }  
 }
 
 const themeOptions = {
+	// setting the typography variants
     typography: {
         h1: {
             fontFamily: roboto_condensed.style.fontFamily,
@@ -91,6 +96,7 @@ import themeOptions from '@/config/theme'
 Create the `Provider` function:
 ```ts
 export function Provider({ children } : {children: React.ReactNode}) {
+	// creating a theme using the themeOptions imported from theme.ts
 	const theme = createTheme({  
 	...themeOptions  
 	});
@@ -100,6 +106,7 @@ Notice that the theme uses the `themeOptions` defined in and imported from `them
 
 Add the `return` statement as shown below:
 ```ts
+// the ThemeProvider should wrap all children components
 return (
 	 <ThemeProvider theme={theme}>
 		 {children}
@@ -117,10 +124,13 @@ import themeOptions from "@/config/theme";
 
 
 export function Provider({ children } : {children: React.ReactNode}) {
+	// creating a theme using the themeOptions imported from theme.ts
     const theme = createTheme({
         ...themeOptions
     });
-
+    
+	// we use the ThemeProvider to pass the current theme to all the component below it 
+	// any component can read the theme, no matter how deep it is
     return (
         <ThemeProvider theme={theme}>
             {children}
@@ -137,6 +147,7 @@ import {Provider} from "@/components/Provider/Provider";
 
 Update the return statement by wrapping the `children` with `Provider` as shown below:
 ```ts
+// the Provider component wraps all children components in the body of our website and applies the theme to them
 return (
         <html lang="en">
         <body>
