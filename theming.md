@@ -62,7 +62,16 @@ declare module '@mui/material/Typography' {
     }  
 }  
   
-const themeOptions = {  
+const themeOptions = {
+    // setting the primary and secondary theme colors  
+    palette: {  
+        primary: {  
+            main: "#7a003c"  
+        },  
+        secondary: {  
+            main: "#fdbf57"  
+        }  
+    },
     // setting the typography variants  
     typography: {  
         h1: {  
