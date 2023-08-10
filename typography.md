@@ -239,4 +239,4 @@ Following these changes, the "Settings" page should now look like this:
 
 ![typography-settings](assets/img/typography-settings.png)
 
-You can use any the typography styles defined in `theme.ts` by specifying the variant in the `Typography` component. You can also define additional styles and use them in your SPA.
+You can use any of the typography styles defined in `theme.ts` by specifying the variant in the `Typography` component. You can also define additional styles and use them in your SPA.
