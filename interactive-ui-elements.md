@@ -130,7 +130,7 @@ import {MacButton} from '@/components/MacComponents/MacButton'
 >
 	Download
 </MacButton>
-{% endraw %}s
+{% endraw %}
 ```
 
 The styled download button will look like this:
