@@ -26,7 +26,17 @@ Open the `MacNavButton.tsx` file located under the `components/MacComponents` di
 },
 ```
 
-We defined the `focus-visible` pseud-class to be a solid white outline that is `2px` thick.
+We defined the `focus-visible` pseudo-class to be a solid white outline that is `2px` thick.
+
+Next, we will need to define the `focus-visible` pseudo-class for active links in the navigation bar. Open the `Navbar.module.css` file in the `styles` directory and add the following lines of code to it:
+
+```css
+.active:focus-visible {  
+    color: white;  
+    background: #707070;  
+    outline-color: #fdbf57;  
+}
+```
 
 Save the file and go back to your browser. Try to tab through the navigation bar and notice the updated focus indicator.
 
@@ -34,6 +44,8 @@ Accessible Focus Indictor on `MacNavButton`          |  Accessible Focus Indicat
 :-------------------------:|:-------------------------:
 ![focus-nav](assets/img/focus-nav.png)  |  ![focus-icon](assets/img/focus-icon.png)
 
+The focus indicator on active links also adheres to the accessibility standards:
+![focus-nav-active](assets/img/focus-nav-active.png)
 ## Buttons
 We will now update the custom `MacButton` component that we created earlier with an accessible focus indicator.
 

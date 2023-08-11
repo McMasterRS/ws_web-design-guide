@@ -147,7 +147,7 @@ We will modify the page links to use the custom `MacNavButton` component that we
 			key={page[0]}
 			component={Link}
 			href={page[1]}
-			sx={{my: 2, color: 'white', display: 'block'}}
+			sx={{mx: 0.3, my: 2, color: 'white', display: 'block'}}
 			// if the current route equals the URL associated with the button,  
 			// then use the active style. Otherwise, use the inactive style
 			className={
