@@ -11,7 +11,14 @@ A website's footer typically contains copyright notices, disclaimers, and links 
 
 ## Modify the Footer Position
 Open the `components/Footer/Footer.tsx` file and locate the `Paper` component inside the `return` statement. 
-Notice that the `position` prop is set to `fixed` , which is why the footer is always visible at the bottom of the page. We will modify this prop to be set conditionally depending on the screen size using the MUI breakpoints API. 
+Notice that the `position` prop is set to `fixed` , which is why the footer is always visible at the bottom of the page. We will modify this prop to be set conditionally depending on the screen size using the MUI breakpoints API. MUI offers 5 default breakpoints that can be modified if needed. Each breakpoint (a key) matches with a _fixed_ screen width (a value):
+- **xs,** extra-small: 0px
+- **sm,** small: 600px
+- **md,** medium: 900px
+- **lg,** large: 1200px
+- **xl,** extra-large: 1536px
+
+For the purposes of this workshop, we will only be using the **xs** and **md** breakpoints to create two distinct user interfaces for mobile devices (xs) and desktop or laptop monitors (md).
 
 Add the following import statement to `Footer.tsx`:
 ```ts
