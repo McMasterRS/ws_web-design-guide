@@ -25,7 +25,7 @@ At the end of this workshop, attendees will be able to:
 	1. [Favicon](favicon.md)
 	2. [Typography](typography.md)
 	3. [Navigation Bar](navigation-bar.md)
-	4.  [Dark and Light Mode](dark-light-mode.md)
+	4. [Dark and Light Mode](dark-light-mode.md)
 	5. [Interactive UI Elements](interactive-ui-elements.md)
 		1. [Buttons](interactive-ui-elements.md#buttons)
 		2. [Buttons With a Dropdown Menu](interactive-ui-elements.md#buttons-with-a-dropdown-menu)

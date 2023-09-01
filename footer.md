@@ -138,3 +138,17 @@ Add the following lines of code to before the closing `</Container>` tag:
 Save the file and go back to your browser. Try changing the browser window width and notice how the footer changes.
 
 ![footer-small](assets/img/footer-small.png)
+
+Most browsers include a development tool that allows you to simulate a number of mobile devices to ensure that your website renders properly on these devices. You can simulate a mobile device by using one of the methods below:
+
+- **Firefox:**
+	- Right-click on page > Inspect Element > Click the Toggle Device icon ![toggle-device-icon](https://its.uri.edu/wp-content/uploads/toggle-device-toolbar.png)
+	- Alternatively, you can use the **Ctrl + Shift + M** (Windows) or **Cmd+Opt+M** (Mac) keyboard shortcut to toggle the mobile device view.
+- **Chrome:**
+	- Right-click on page > Inspect > Click the Toggle Device icon ![toggle-device-icon-chrome](https://its.uri.edu/wp-content/uploads/toggle-device-toolbar.png)
+	- Alternatively, you can use the **Ctrl + Shift + M** (Windows) or **Cmd+Opt+M** (Mac) keyboard shortcut to toggle the mobile device view.
+
+You can then select the desired mobile device from the dropdown menu in the top right corner of the screen:
+
+![select-mobile-device](assets/img/select-mobile-device.png)
+
