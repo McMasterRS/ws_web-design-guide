@@ -131,6 +131,7 @@ Go back to your browser and try tab over the new `MacSwitch`:
 Focus Indictor on Enabled `MacSwitch`          |  Focus Indicator on Disabled `MacSwitch`
 :-------------------------:|:-------------------------:
 ![switch-on-focus](assets/img/switch-on-focus.png)  |  ![switch-off-focus](assets/img/switch-off-focus.png)
+
 ## Checkboxes
 We will now add a regular `CheckBox` component to "Page 1" to inspect the default focus indicator.
 
