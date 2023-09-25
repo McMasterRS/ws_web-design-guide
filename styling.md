@@ -22,3 +22,7 @@ Then, checkout the `styling` branch using the following command or using the IDE
 ```
 git checkout styling
 ```
+
+## Workshop Recording
+
+<iframe height="420" width="640" allowfullscreen frameborder=0 src="[https://echo360.ca/media/e73bf31e-472d-4fe6-8ac9-24572452e6b0/public?autoplay=false&automute=false](https://echo360.ca/media/e73bf31e-472d-4fe6-8ac9-24572452e6b0/public?autoplay=false&automute=false "https://echo360.ca/media/e73bf31e-472d-4fe6-8ac9-24572452e6b0/public?autoplay=false&automute=false")"></iframe>
