@@ -9,7 +9,7 @@ nav_order: 2
 
 We have already styled the navigation bar in our SPA. However, the current design does not scale properly on smaller displays. We will modify the navigation bar to make use of the MUI `Drawer` component on smaller screens.
 
-## Limit Current Configuration to Medium/Large Displays
+## Limit Current Configuration to Medium (or Larger) Displays 
 We will start by limiting the current navigation bar setup to medium and large display using breakpoints.
 
 Open the `components/Navbar/Navbar.tsx` file and replace all the existing `display: 'flex'` lines with `display: {xs: 'none', md: 'flex'}`.
@@ -47,7 +47,7 @@ const toggleDrawer =
 			setState(open);
 		};
 
-const icons = [<LooksOneIcon key={'transcripts-page'} />, <LooksTwoIcon key={'privacy-policy'}/>]
+const icons = [<LooksOneIcon key={'page-1'} />, <LooksTwoIcon key={'page-2'}/>]
 
 const pages_drawer = () => (
 	<Box
