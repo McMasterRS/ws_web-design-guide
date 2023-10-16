@@ -25,11 +25,13 @@ Add the following import statement to `Footer.tsx`:
 import {useTheme} from "@mui/material/styles";
 ```
 
-Delete the `position: 'fixed'` line and replace it with the following lines of code:
+Delete the `position: 'fixed'` line in the `sx` prop of the `Paper` component and replace it with the following lines of code:
 ```ts
+// the position is relative on xs and sm screens
 [useTheme().breakpoints.between('xs', 'md')]: {
 	position: 'relative',
 },
+// the position is fixed on screen that are md or larger
 [useTheme().breakpoints.up('md')]: {
 	position: 'fixed',
 },
@@ -37,8 +39,9 @@ Delete the `position: 'fixed'` line and replace it with the following lines of c
 We set the footer `position` to `relative` on screen size between small (inclusive) and medium (non-inclusive), whereas the position is set to `fixed` on screens that are medium or larger. 
 
 ## Modify the Footer Height
-Similarly, we will need to reduce the height of the footer on small screens by adding the following lines of code inside the `sx` prop:
+Similarly, we will need to reduce the height of the footer on small screens by adding the following lines of code inside the `sx` prop of the `Paper` component:
 ```ts
+// setting the footer height to 93 on xs and sm screens
 [useTheme().breakpoints.between('xs', 'md')]: {  
 	height: '93',  
 },
@@ -57,6 +60,7 @@ Replace the `display: 'flex'` line inside the `sx` prop of the `Box` and the fir
 	sx={{
 		flexGrow: 1,
 		justifyContent: 'center',
+		// only show this component on md screens
 		display: {xs: 'none', md: 'flex'},
 		my: 1,
 	}}
@@ -66,6 +70,7 @@ Replace the `display: 'flex'` line inside the `sx` prop of the `Box` and the fir
 	sx={{
 		flexGrow: 1,
 		justifyContent: 'space-between',
+		// only show this component on md screens
 		display: {xs: 'none', md: 'flex'}
 	}}
 	container
@@ -83,10 +88,11 @@ Add the following lines of code to before the closing `</Container>` tag:
 ```ts
 {% raw %}
 <Stack
-	direction="column"
+	direction="column" // the components inside Stack will be stacked vertically
 	justifyContent="space-between"
 	alignItems="center"
 	spacing={1}
+	// only show this component on xs screens
 	sx={{display: {xs: 'flex', md: 'none'}}}
 >
 	<Box

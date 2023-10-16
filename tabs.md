@@ -30,12 +30,15 @@ import IconButton from "@mui/material/IconButton";
 Next, add the following lines of code before the `return` statement:
 ```ts
 {% raw %}
+// function that handles changing tabs in the tabs drawer
 const handleChangeDrawer = (e: React.MouseEvent<HTMLDivElement>, newValue: number) => {
 	setValue(newValue);
 }
 
+// declaring a state variable that determines if the tabs drawer is open and initializing it to false
 const [state, setState] = React.useState(false);
 
+// function used to open and close the tabs drawer
 const toggleDrawer =
 	(open: boolean) =>
 		(event: React.KeyboardEvent | React.MouseEvent) => {
@@ -49,6 +52,7 @@ const toggleDrawer =
 			setState(open);
 		};
 
+// function used to render the items inside the tabs drawer
 const list = () => (
 	<Box
 		sx={{ width:  250 }}
@@ -80,9 +84,11 @@ We will now add the UI elements that should only be visible on smaller screens. 
 Add the following lines of code right after the `Tabs` closing tag inside the `return` statement:
 ```ts
 {% raw %}
+{/* adding an icon button to open/close the drawer on mobile devices */}
 <Box sx={{paddingTop: '19px'}}>
 	<IconButton title="Settings Drawer" aria-label="settings-menu" onClick={toggleDrawer(true)} sx={{ display: {xs: 'inline', md: 'none'}, height:'40px'}}> <FormatListBulletedOutlinedIcon /> </IconButton>
 </Box>
+{/* rendering the Drawer component */}
 <Drawer
 	anchor={"left"}
 	open={state}
@@ -103,17 +109,18 @@ Add the following lines of code right after the `Tabs` closing tag inside the `r
 		display: {xs: 'flex', md: 'none'}
 	}}                        
 >
-	{list()}
+	{list() /* calling list() to render the content of the tabs drawer */}
 </Drawer>
 {% endraw %}
 ```
 
 We will also add a title to each panel that is only visible on small screens since the tab names are no longer visible when the user is on each tab.
 
-Modify each `TabPanel` component by adding a `Typography` component to it and only displaying it on small screen using breakpoints:
+Modify each `TabPanel` component by adding a `Typography` component to it and only displaying it on small screens using breakpoints:
 ```ts
 {% raw %}
 <TabPanel value={value} index={0}>
+	{/* adding a Typography component with the title of the active tab (only visible on small screens) */}
 	<Typography
 		sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'left', paddingLeft: '10px'}}
 		gutterBottom
