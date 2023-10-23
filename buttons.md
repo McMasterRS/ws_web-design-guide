@@ -29,11 +29,6 @@ Locate the "Download" `MacButton` component and replace the `Download` string in
 {useMediaQuery(useTheme().breakpoints.up('md')) ? 'Download' : ''}
 ```
 
-The `Tooltip` opening tag should now look like this: 
-```ts
-{/* only show the Download string on screens that are medium or larger */}
-<Tooltip title={useMediaQuery(useTheme().breakpoints.up('md')) ? 'Download' : ''} >
-```
 The button will now only show the "Download" string on display that are medium sized or larger.
 
 ![download-small-2](assets/img/download-small-2.png)
