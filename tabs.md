@@ -9,7 +9,7 @@ nav_order: 4
 
 The vertical tabs we created for the "Settings" page do not scale properly on mobile devices. We will modify the `VerticalTabs` component to use a small drawer for switching tabs on the "Settings" page when viewed on a small screen.
 
-## Limit Current Configuration to Medium/Large Displays
+## Limit Current Configuration to Medium (or Larger) Displays
 We will start by limiting the current tabs setup to medium and large display using breakpoints.
 
 Open the `components/TabPanel/VerticalTabs.tsx` file and replace the `display: 'flex'` line inside the `Tabs` component with `display: {xs: 'none', md: 'flex'}`.
