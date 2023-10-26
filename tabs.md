@@ -123,6 +123,7 @@ Modify each `TabPanel` component by adding a `Typography` component to it and on
 	{/* adding a Typography component with the title of the active tab (only visible on small screens) */}
 	<Typography
 		sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'left', paddingLeft: '10px'}}
+		variant="h3"
 		gutterBottom
 >
 		Notifications
