@@ -21,3 +21,7 @@ Then, checkout the `mobile-ui` branch using the following command or using the I
 ```
 git checkout mobile-ui
 ```
+
+## Workshop Recording
+
+<iframe height="420" width="640" allowfullscreen frameborder=0 src="https://echo360.ca/media/39ec63e3-042e-45ec-be8c-93eaf14bad65/public?autoplay=false&automute=false"></iframe>
