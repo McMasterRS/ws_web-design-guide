@@ -10,7 +10,7 @@ nav_order: 5
 Accounting for keyboard users is an imperative step towards ensuring that all users can easily navigate your website's user interface. A keyboard user’s cursor equivalent is called a **focus indicator**. Unfortunately, not all websites feature accessible focus indicators. By designing and implementing accessible focus indicators, we can make our website more accessible to keyboard users and users of assistive technology.
 
 According to the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-minimum), a focus indicator should satisfy the following requirements:
-- The focus indicator should the visual presentation of the user interface component;
+- The focus indicator should enclose the visual presentation of the user interface component;
 - The focus indicator should have a contrast ratio of at least 3:1 between its pixels in the focused and unfocused states;
 - The focus indicator should have a contrast ratio of at least 3:1 against adjacent colors **or** should not be thinner than 2px.
 
