@@ -14,7 +14,7 @@ According to the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.or
 - The focus indicator should have a contrast ratio of at least 3:1 between its pixels in the focused and unfocused states;
 - The focus indicator should have a contrast ratio of at least 3:1 against adjacent colors **or** should not be thinner than 2px.
 
-By default, MUI uses a pulsing ripple effect when tabbing through UI elements. The pulsing ripple does not meet the accessibility requirements. In this section of the workshop, we will learn how to style the focus indicator of a number of MUI components to ensure that it meets the requirements outlined by the WCAG.
+By default, MUI uses a pulsing ripple effect when tabbing through UI elements. The pulsing ripple does not meet the accessibility requirements. In this section of the workshop, we will learn how to style the focus indicators of a number of MUI components to ensure that they meet the requirements outlined by the WCAG.
 
 ## Navigation Buttons
 We will start updating the custom buttons we created for the navigation bar to ensure that that they have accessible focus indicators.
