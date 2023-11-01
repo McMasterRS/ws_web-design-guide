@@ -21,6 +21,7 @@ We will start updating the custom buttons we created for the navigation bar to e
 
 Open the `MacNavButton.tsx` file located under the `components/MacComponents` directory and the following lines of code under **both** the `MacNavButton` and `MacIconNavButton` declarations:
 ```ts
+// adding a solid white border that is 2px thick to the button that is shown when tabbing through it
 "&:focus-visible": {
 	outline: "2px solid #fff",
 },
@@ -31,6 +32,7 @@ We defined the `focus-visible` pseudo-class to be a solid white outline that is 
 Next, we will need to define the `focus-visible` pseudo-class for active links in the navigation bar. Open the `Navbar.module.css` file in the `styles` directory and add the following lines of code to it:
 
 ```css
+/* Specific styles when tabbing through an active navbar link (solid yellow border, white text and grey background) */
 .active:focus-visible {  
     color: white;  
     background: #707070;  
@@ -51,6 +53,11 @@ We will now update the custom `MacButton` component that we created earlier with
 
 Open the `MacButton.tsx` file located under the `components/MacComponents` directory and the following lines of code under `MacButton` declarations
 ```ts
+// setting the focus indicator style  
+// in light mode: primary buttons will have a black outline and grey background  
+// in light mode: secondary buttons will have a maroon outline and light grey background  
+// in dark mode: primary buttons will have a desaturated maroon (pink) outline and grey background  
+// in dark mode: secondary buttons will have a vivid maroon outline and light grey background
 "&:focus-visible": {
 	color: useTheme().palette.mode === 'dark' ? (props.mainColor === 'primary' ? '#FFFFFF' : '') : '',
 	backgroundColor:
@@ -94,15 +101,18 @@ import styled from "@emotion/styled";
 import Switch, {SwitchProps} from "@mui/material/Switch";
 import React from "react";
 
+// disabling the ripple effect using disableFocusRipple
 export const MacSwitch = styled((props: SwitchProps) => (
-    <Switch disableFocusRipple {...props} />
+    <Switch disableFocusRipple {...props} />  
 ))(({ }) => ({
     '& .MuiSwitch-switchBase': {
+	    // when the switch is disabled and in focus, its background color will be dark grey and the outline will be light pink
         '&.Mui-focusVisible .MuiSwitch-thumb': {
             backgroundColor: '#5E6A71',
             outline: `3px solid #F4B7C7`,
         },
     },
+    // when the switch is enabled and in focus, its background color will be vivid maroon and the outline will be heritage gold
     '& .MuiSwitch-switchBase.Mui-checked': {
         '&.Mui-focusVisible .MuiSwitch-thumb': {
             backgroundColor: '#dd3765',
@@ -161,10 +171,12 @@ import styled from "@emotion/styled";
 import Checkbox, {CheckboxProps} from "@mui/material/Checkbox";  
 import React from "react";  
 import {useTheme} from "@mui/material/styles";  
-  
+
+// disabling the ripple effect using disableFocusRipple
 export const MacCheckbox = styled((props: CheckboxProps) => (  
     <Checkbox disableFocusRipple {...props} />  
 ))(({ }) => ({  
+	// adding a solid outline that is 2px thick and uses the current primary theme color (in light or dark mode)
     '&.Mui-focusVisible': {  
         outline: `2px solid ${useTheme().palette.primary.main}`,  
     },  
@@ -222,7 +234,8 @@ const theme = React.useMemo(
                 ...themeOptions.components,  
                 MuiButtonBase: {  
                     styleOverrides: {  
-                        root: {  
+                        root: {
+                        // adding a solid outline that is 2px thick and uses the current primary theme color (in light or dark mode)  
                             "&:focus-visible": {  
                                 outline: `2px solid ${primary_color}`,  
                             },  

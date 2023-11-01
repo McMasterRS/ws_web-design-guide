@@ -4,7 +4,7 @@ title: Skip to Main Content Button
 parent: AODA Compliance
 nav_order: 6
 ---
-# "Skip to Main" Content Button
+# "Skip to Main Content" Button
 
 Many modern websites have a consistent set of UI elements at top of every page. The content commonly includes a header with the brand logo and a navigation bar. If a user navigates the same site regularly, they will probably find themselves navigating through these UI elements regularly to get to the main content on the page, which can be tedious and detrimental to the overall user experience. As such, developers started adding a "Skip to Main Content" button to their webpages. These anchor buttons are meant to be used as the first element that a user can tab to when they first load a webpage. In this section, we will learn how to add a "Skip to Main Content" button to our Next.js application.
 
@@ -47,7 +47,7 @@ const SkipLink: React.FC<SkipLinkProperties> = props => {
 export default SkipLink;
 ```
 
-We created re-usable component that encapsulates the desired "Skip to Main Content" functionality. `SkipLink.tsx` includes an `onClick` event handler that will be forwarded to any children component nested inside the `SkipLink` component. Notice that the `SkipLink` component has two props: a `ClassName` used to specify the CSS class and a `SkipTo` string containing the CSS query used to determine which component we want to skip to. 
+We created a re-usable component that encapsulates the desired "Skip to Main Content" functionality. `SkipLink.tsx` includes an `onClick` event handler that will be forwarded to any children component nested inside the `SkipLink` component. The `className` prop of the `SkipLink` is used to specify the CSS class and a `SkipTo` string containing the CSS query used to determine which component we want to skip to. 
 
 Our next step is to create a custom `SkipButton` component that we will nest inside the `SkipLink` component.
 
@@ -65,12 +65,13 @@ interface SkipButtonProps extends ButtonProps {
 export const SkipButton = styled(MuiButton, {
     shouldForwardProp: prop => prop !== 'mainColor',
 })<SkipButtonProps>(props => ({
-    backgroundColor: useTheme().palette.secondary.main,
-    color: '#262626',
+    backgroundColor: useTheme().palette.secondary.main, // using the secondary color (heritage gold) as the background color
+    color: '#262626', // setting the text color to black 
+    // styles used when the button is in focus
     "&:focus-visible": {
-        color: 'white',
-        backgroundColor: '#707070',
-        outline: '2px solid #fdbf57',
+        color: 'white', // the text color should be white
+        backgroundColor: '#707070', // the background is grey
+        outline: '2px solid #fdbf57', // the outline is a 2px solid heritage gold line
     },
 }))
 ```
@@ -88,6 +89,7 @@ Next, add the Sass styles for the `SkipLink` component by creating a `SkipLink.m
 
 Add the following lines of code `SkipLink.modukle.scss`:
 ```scss
+// placing the button in the top-right corner and addition a transition animation (sliding)
 .skipLink {  
   margin-right: 1rem !important;  
   position: absolute !important;  
@@ -111,6 +113,7 @@ import styles_skip from '@/styles/SkipLink.module.scss'
 Add the following lines of code **before** the `<Container maxWidth="xl">` line:
 
 ```ts
+{/* setting the zIndex to 1300 to ensure that the button always renders on top of other component */}
 <Box sx={{zIndex: 1300}}>
 	<SkipLink className={styles_skip.skipLink} skipTo={"main:first-of-type"}>
 		<SkipButton mainColor={"primary"} sx={{marginTop:2.4, marginLeft:2, color: 'white'}}>Skip to main content</SkipButton>
