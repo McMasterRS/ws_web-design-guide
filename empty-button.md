@@ -21,6 +21,7 @@ After inspecting the code, we found that the empty button is the "Back" button t
 
 Open the `components/BreadCrumbs/BreadCrumbs.tsx` file and locate the `MacButton` component containing an `ArrowBackIcon`. Add a `title` prop to the `MacButton` component:
 ```ts
+{/* adding a title to the back button using the "title" prop on MacButton (inherited from MuiButton) */}
 <MacButton variant="contained" mainColor="primary" onClick={() => router.back()} title={"Back"}>
     <ArrowBackIcon />
 </MacButton>
@@ -45,6 +46,7 @@ import Tooltip from "@mui/material/Tooltip";
 Locate the `MacButton` "Download" component and wrap it in a `Tooltip` component as shown below:
 ```ts
 {% raw %}
+{/* adding a Tooltip message to the Download button that is only visible on medium or larger screens */}
  <Tooltip title={useMediaQuery(useTheme().breakpoints.down('md')) ? 'Download' : ''} >
 	<MacButton
 		id="download-button"

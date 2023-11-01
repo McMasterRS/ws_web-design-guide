@@ -15,6 +15,7 @@ This error is caused by the dropdown menu component (i.e., the `Select` componen
 
 Add an `htmlFor` prop to the `InputLabel` component as shown below:
 ```ts
+{/* the value of htmlFor should match the id of the Select component */}
 <InputLabel id="demo-simple-select-label" htmlFor="demo-simple-select-input">
 	Demo Dropdown Menu
 </InputLabel>
