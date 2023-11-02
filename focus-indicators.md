@@ -40,7 +40,7 @@ Next, we will need to define the `focus-visible` pseudo-class for active links i
 }
 ```
 
-Save the file and go back to your browser. Try to tab through the navigation bar and notice the updated focus indicator.
+Save the file, **stop** the container and **restart** it, and then go back to your browser and **reload** the page. Try to tab through the navigation bar and notice the updated focus indicator.
 
 Accessible Focus Indictor on `MacNavButton`          |  Accessible Focus Indicator on `MacIconNavButton`
 :-------------------------:|:-------------------------:
