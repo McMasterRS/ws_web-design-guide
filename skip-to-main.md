@@ -113,12 +113,14 @@ import styles_skip from '@/styles/SkipLink.module.scss'
 Add the following lines of code **before** the `<Container maxWidth="xl">` line:
 
 ```ts
+{% raw %}
 {/* setting the zIndex to 1300 to ensure that the button always renders on top of other component */}
 <Box sx={{zIndex: 1300}}>
 	<SkipLink className={styles_skip.skipLink} skipTo={"main:first-of-type"}>
 		<SkipButton mainColor={"primary"} sx={{marginTop:2.4, marginLeft:2, color: 'white'}}>Skip to main content</SkipButton>
 	</SkipLink>
 </Box>
+{% endraw %}
 ```
 
 The `Box` containing the "Skip to Main Content" button has the `zIndex` property set to `1300` to ensure that the button always renders on top of other components. We set the `className` prop of the `SkipLink` component to the style defined in the `SkipLink.modue.scss` file. The `skipTo` string is set to `"main:first-of-type"`, i.e., we want to skip to the first component that has `main` as its class.
