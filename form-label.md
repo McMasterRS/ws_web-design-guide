@@ -11,7 +11,7 @@ Navigate to the "Settings" page by clicking on the gear icon and evaluate the pa
 
 ![form-label-error](assets/img/form-label-error.png)
 
-This error is caused by the dropdown menu component (i.e., the `Select` component) not having an `id` that matches that of its corresponding `InputLabel`. To fix this issue, simply open the `components/TabPanel/VerticalTabs.tsx` file and locate the `InputLabel` and `Select` components.
+This error is caused by the dropdown menu component (i.e., the `Select` component) not having an `id` that matches the corresponding `InputLabel`. To fix this issue, simply open the `components/TabPanel/VerticalTabs.tsx` file and locate the `InputLabel` and `Select` components.
 
 Add an `htmlFor` prop to the `InputLabel` component as shown below:
 ```ts
