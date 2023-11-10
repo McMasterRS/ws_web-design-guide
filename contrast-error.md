@@ -30,7 +30,7 @@ Modify the `MuiFileInput` component by adding an `sx` prop as shown below:
 	// the current theme mode (light/dark)
 	sx={{  
 		"& .MuiFileInput-placeholder": {  
-		color:  useTheme().palette.mode === 'light' ? '#767676' : '#d3d3d3' + '!important', 
+			color:  (useTheme().palette.mode === 'light' ? '#767676' : '#d3d3d3') + '!important', 
 		},  
 	}}  
 />
