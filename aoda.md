@@ -21,3 +21,7 @@ Then, checkout the `aoda` branch using the following command or using the IDE GU
 ```
 git checkout aoda
 ```
+
+## Workshop Recording
+
+<iframe height="420" width="640" allowfullscreen frameborder=0 src="https://echo360.ca/media/c0f2e7fc-5a18-4ed2-8a1f-214019c69fbe/public?autoplay=false&automute=false"></iframe>
